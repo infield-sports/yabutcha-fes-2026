@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGA LAUGH & MUSIC FES 2026 やぶっちゃと愉快な仲間たち</title>
+<meta name="description" content="2026年9月23日(水・祝)、島ヶ原温泉やぶっちゃ・フリーサイトで開催する野外音楽×お笑いフェスティバル。">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yomogi&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF8F1;
+    --ink:#2A241C;
+    --ink-soft:#6B5E4C;
+    --terracotta:#C1592E;
+    --forest:#3F5F3E;
+    --line:rgba(42,36,28,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Zen Maru Gothic', sans-serif; background:var(--cream); color:var(--ink); line-height:1.8;}
+  .hand{font-family:'Yomogi', cursive;}
+  a{color:inherit;}
+  img{display:block; width:100%; height:100%; object-fit:cover;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 6vw;}
+
+  header{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 6vw;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .logo-mark{font-weight:900; font-size:14px; letter-spacing:.02em;}
+  .logo-mark .hand{font-size:18px; color:var(--forest); margin-right:6px;}
+  header .btn{padding:10px 20px; font-size:12.5px;}
+  .header-nav{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;}
+  .header-nav .btn{white-space:nowrap;}
+  @media (max-width:480px){
+    .header-nav{gap:8px;}
+    .header-nav .btn{padding:7px 14px; font-size:11px;}
+  }
+
+  /* HERO */
+  .hero{
+    position:relative; height:92vh; min-height:520px; background:var(--ink);
+    opacity:0; animation:hero-reveal 1.6s ease forwards;
+  }
+  @keyframes hero-reveal{ from{opacity:0;} to{opacity:1;} }
+  .hero video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .hero::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(20,20,15,0.25) 0%, rgba(20,20,15,0.6) 100%);
+  }
+  .hero-badge{
+    position:absolute; z-index:2; top:50%; left:50%;
+    transform:translate(-50%,-58%);
+    width:min(46vw, 320px); height:auto; object-fit:contain;
+    filter:
+      drop-shadow(0 0 2px #fff)
+      drop-shadow(0 0 2px #fff)
+      drop-shadow(0 0 16px rgba(255,255,255,0.9))
+      drop-shadow(0 0 34px rgba(255,255,255,0.55))
+      drop-shadow(0 10px 24px rgba(0,0,0,0.35));
+  }
+  .hero-copy{
+    position:absolute; inset:0; z-index:2;
+    display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+    text-align:center; color:#fff; padding:0 6vw 6vh;
+  }
+  .cta-row{margin-top:22px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;}
+  header .header-logo{height:32px; width:auto;}
+
+  .hero-info-strip{
+    text-align:center; padding:5vh 6vw; background:var(--cream);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-info-strip .eyebrow-lg{color:var(--ink);}
+  .hero-info-strip .eyebrow-lg .line-date{
+    font-size:clamp(17px,3.2vw,26px); font-weight:900; letter-spacing:.03em; line-height:1.6;
+  }
+  .hero-info-strip .eyebrow-lg .line-date .accent{color:var(--terracotta);}
+  .hero-info-strip .eyebrow-lg .line-venue{
+    margin-top:6px; font-size:clamp(13px,2vw,16px); font-weight:700;
+    color:var(--ink-soft); letter-spacing:.02em;
+  }
+  .hero-info-strip .title-text{
+    font-size:clamp(26px,5vw,40px); font-weight:900; color:var(--forest);
+    letter-spacing:.01em; margin-bottom:18px; line-height:1.4;
+  }
+  .hero-info-strip .title-text span{
+    display:inline-block; margin-top:8px; font-size:0.4em; font-weight:700; color:var(--ink-soft);
+    letter-spacing:.05em;
+  }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:14px 30px; border-radius:999px; font-weight:900; font-size:13.5px;
+    text-decoration:none; border:2px solid transparent;
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .btn-fill{background:var(--terracotta); color:#fff;}
+  .btn-outline{background:transparent; color:#fff; border-color:rgba(255,255,255,0.8);}
+  .btn-soft{background:transparent; color:var(--ink); border-color:transparent; border-radius:8px; font-weight:700;}
+  .btn-soft:hover{background:var(--forest); color:#fff;}
+
+  /* SECTIONS */
+  section{padding:9vh 0;}
+  .eyebrow{font-size:12px; font-weight:700; letter-spacing:.12em; color:var(--terracotta);}
+  h2{font-size:clamp(22px,3vw,30px); font-weight:900; margin-top:8px;}
+  .lead{margin-top:22px; font-size:15px; color:var(--ink-soft);}
+
+  .info-grid{
+    margin-top:36px; display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
+  }
+  @media (max-width:700px){ .info-grid{grid-template-columns:1fr 1fr;} }
+  .info-grid .cell{
+    background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px 14px;
+    text-align:center;
+  }
+  .info-grid .icon{
+    width:56px; height:56px; object-fit:contain; margin:0 auto;
+    animation:icon-dance 2.4s ease-in-out infinite;
+  }
+  .info-grid .cell:nth-child(2) .icon{animation-delay:.2s;}
+  .info-grid .cell:nth-child(3) .icon{animation-delay:.4s;}
+  .info-grid .cell:nth-child(4) .icon{animation-delay:.6s;}
+  @keyframes icon-dance{
+    0%, 100%{transform:translateY(0) rotate(0deg);}
+    25%{transform:translateY(-7px) rotate(-9deg);}
+    50%{transform:translateY(0) rotate(0deg);}
+    75%{transform:translateY(-7px) rotate(9deg);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .info-grid .icon{animation:none;}
+  }
+  .info-grid .v{margin-top:10px; font-weight:900; font-size:14.5px; line-height:1.5;}
+
+  .photo-row{margin-top:44px; display:grid; grid-template-columns:1.4fr 1fr; gap:14px; height:340px;}
+  @media (max-width:700px){ .photo-row{grid-template-columns:1fr; height:auto;} .photo-row img{height:220px;} }
+  .photo-row .ph{border-radius:16px; overflow:hidden;}
+
+  /* TICKET */
+  .band{background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .ticket-cards{margin-top:36px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  @media (max-width:700px){ .ticket-cards{grid-template-columns:1fr;} }
+  .ticket-card{
+    background:var(--cream); border:1px solid var(--line); border-radius:16px;
+    padding:24px 20px; text-align:center;
+  }
+  .ticket-card .who{font-weight:900; font-size:14.5px;}
+  .ticket-card .price{margin-top:12px; font-family:'Yomogi',cursive; font-size:28px; color:var(--terracotta);}
+  .ticket-card .price small{display:block; font-size:12px; font-family:'Zen Maru Gothic',sans-serif; color:var(--ink-soft); margin-top:2px;}
+  .ticket-card .day{margin-top:8px; font-size:11.5px; color:var(--ink-soft);}
+  .note{margin-top:28px; font-size:12.5px; color:var(--ink-soft); line-height:2;}
+
+  /* LINEUP */
+  .lineup-sub{margin-top:36px; font-size:clamp(20px,4.4vw,30px); font-weight:900; letter-spacing:.06em; color:var(--forest); display:flex; align-items:center; gap:10px;}
+  .lineup-sub:first-of-type{margin-top:0;}
+  .lineup-icon{display:inline-block; width:1em; height:1em; object-fit:contain;}
+  .lineup-divider{margin-top:52px; padding-top:44px; border-top:1px dashed var(--line);}
+  .lineup-divider .lineup-sub{margin-top:0;}
+
+  .marquee-wrap{margin-top:18px; overflow:hidden; width:100%;}
+  .marquee-track{
+    display:flex; gap:14px; width:max-content;
+    animation:marquee-left 26s linear infinite;
+  }
+  .marquee-track.reverse{animation-name:marquee-right;}
+  .marquee-track:hover{animation-play-state:paused;}
+  @keyframes marquee-left{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  @keyframes marquee-right{ from{transform:translateX(-50%);} to{transform:translateX(0);} }
+
+  .artist-card{
+    flex:0 0 auto; width:min(45vw, 280px);
+    border-radius:14px; overflow:hidden; background:#fff; border:1px solid var(--line);
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .artist-card:hover{transform:translateY(-6px) scale(1.03); box-shadow:0 16px 32px rgba(42,36,28,0.16);}
+  .artist-card .thumb{
+    aspect-ratio:1/1;
+    background:linear-gradient(135deg, var(--forest), var(--terracotta));
+    display:flex; align-items:center; justify-content:center;
+    color:rgba(255,255,255,0.9); font-family:'Yomogi',cursive; font-size:clamp(28px,6vw,42px);
+    transition:filter .3s ease;
+  }
+  .artist-card:hover .thumb{filter:brightness(1.08);}
+  .artist-card .meta{padding:16px 14px; text-align:center;}
+  .artist-card .name{font-weight:900; font-size:15px;}
+  .artist-card .tag{font-size:11px; color:var(--ink-soft); margin-top:4px; letter-spacing:.05em;}
+
+  /* scroll reveal */
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+
+  /* ACCESS */
+  .access-grid{margin-top:36px; display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start;}
+  @media (max-width:700px){ .access-grid{grid-template-columns:1fr;} }
+  .access-grid .ph{border-radius:16px; overflow:hidden; aspect-ratio:4/3;}
+  .access-list .row{display:flex; justify-content:space-between; gap:12px; padding:12px 0; border-bottom:1px dashed var(--line); font-size:13.5px;}
+  .access-list .row:last-child{border-bottom:none;}
+  .access-list .k{color:var(--ink-soft); flex-shrink:0;}
+  .access-list .v{font-weight:700; text-align:right;}
+
+  .map-embed{margin-top:28px; border-radius:16px; overflow:hidden; aspect-ratio:16/9; border:1px solid var(--line);}
+  .map-embed iframe{display:block;}
+
+  /* ONSEN */
+  .onsen-price{margin-top:40px;}
+  .onsen-price h3{font-size:15px; font-weight:900;}
+  .onsen-extra-list{margin-top:20px; max-width:360px;}
+  .onsen-grid{margin-top:40px; display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start;}
+  @media (max-width:700px){ .onsen-grid{grid-template-columns:1fr;} }
+  .onsen-grid .ph{border-radius:16px; overflow:hidden; aspect-ratio:4/3;}
+  .onsen-copy h3{font-size:15px; font-weight:900;}
+  .onsen-site-btn{margin-top:20px;}
+  .onsen-copy .warn-lead{margin-top:14px; color:var(--terracotta); font-weight:700; font-size:12px;}
+  .onsen-copy .warn-list{margin-top:8px; padding-left:1.2em; font-size:12px; color:var(--ink-soft); line-height:1.9;}
+  .onsen-copy .warn-list li{margin-top:2px;}
+
+  /* NEWS */
+  .news-list{margin-top:32px; list-style:none;}
+  .news-list li{border-bottom:1px dashed var(--line);}
+  .news-list li:first-child{border-top:1px dashed var(--line);}
+  .news-list a{
+    display:flex; align-items:baseline; gap:18px; padding:16px 4px;
+    text-decoration:none; font-size:13.5px;
+  }
+  .news-list .news-date{flex-shrink:0; color:var(--ink-soft); font-size:12px; font-weight:700;}
+  .news-list .news-title{font-weight:700; flex:1;}
+  .news-list a:hover .news-title{color:var(--terracotta);}
+
+  /* hero kicker / footer title */
+  .hero-kicker{
+    position:absolute; z-index:2; top:20px; left:50%; transform:translateX(-50%);
+    color:#fff; font-size:11px; font-weight:900; letter-spacing:.16em;
+    text-shadow:0 1px 6px rgba(0,0,0,0.5); white-space:nowrap;
+  }
+  .footer-title{font-weight:900; font-size:13px; letter-spacing:.04em; margin-bottom:16px;}
+
+  footer{background:var(--ink); color:var(--cream); padding:6vh 6vw; text-align:center; font-size:12px;}
+  .footer-yabutcha-logo{
+    width:20%; min-width:140px; max-width:240px; margin:0 auto 22px;
+    background:#fff; padding:16px; border-radius:16px;
+    box-shadow:0 12px 28px rgba(0,0,0,0.35);
+  }
+  .footer-yabutcha-logo img{width:100%; height:auto; object-fit:contain;}
+  footer .col{opacity:.8; line-height:2;}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#top"><img class="header-logo" src="images/logo-06-transparent.png" alt="IGA LAUGH & MUSIC FES 2026"></a>
+  <nav class="header-nav">
+    <a class="btn btn-soft" href="#news">お知らせ</a>
+    <a class="btn btn-soft" href="#lineup">出演者</a>
+    <a class="btn btn-soft" href="#access">アクセス</a>
+    <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="#ticket">チケット</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <video autoplay muted loop playsinline poster="images/freesite.jpg">
+    <source src="images/hero.mov">
+  </video>
+  <div class="hero-kicker">IGA LAUGH &amp; MUSIC FES 2026</div>
+  <img class="hero-badge" src="images/logo-03-transparent.png" alt="IGA LAUGH & MUSIC FES 2026 やぶっちゃと愉快な仲間たち">
+  <div class="hero-copy">
+    <div class="cta-row">
+      <a class="btn btn-fill" href="#ticket">チケットを見る</a>
+      <a class="btn btn-outline" href="#access">アクセス</a>
+    </div>
+  </div>
+</section>
+
+<div class="hero-info-strip">
+  <h1 class="title-text">IGA LAUGH &amp; MUSIC FES 2026<br><span>やぶっちゃと愉快な仲間たち</span></h1>
+  <div class="eyebrow-lg">
+    <div class="line-date"><span class="accent">2026.9.23 水・祝</span>　11:00–19:00</div>
+    <div class="line-venue">島ヶ原温泉やぶっちゃ・フリーサイト</div>
+  </div>
+</div>
+
+<section id="news">
+  <div class="wrap">
+    <span class="eyebrow reveal">NEWS</span>
+    <h2 class="reveal">お知らせ</h2>
+    <ul class="news-list">
+      <li class="reveal"><a href="news.html#news-1"><span class="news-date">2026.07.26</span><span class="news-title">IGA LAUGH &amp; MUSIC FES 2026 公式サイトを公開しました</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <span class="eyebrow reveal">ABOUT</span>
+    <h2 class="reveal">湯けむりの中で、音とお笑いが重なる一日</h2>
+    <p class="lead">やぶっちゃ初、そしておそらく伊賀市初となる野外音楽×お笑いフェスティバル。温泉施設に併設されたフリーサイトを会場に、音楽ライブとお笑いライブが入れ替わりで展開されます。キッチンカーやワークショップも並び、演目の合間には温泉の湯気が漂う、やぶっちゃならではの一日を目指しています。</p>
+    <div class="info-grid">
+      <div class="cell reveal"><img class="icon" src="images/icons/icon-owarai.png" alt="お笑いライブ"><div class="v">お笑いライブ</div></div>
+      <div class="cell reveal" style="transition-delay:.05s;"><img class="icon" src="images/icons/icon-music.png" alt="音楽ライブ"><div class="v">音楽ライブ</div></div>
+      <div class="cell reveal" style="transition-delay:.1s;"><img class="icon" src="images/icons/icon-foodtruck.png" alt="キッチンカーグルメ"><div class="v">キッチンカー<br>グルメ</div></div>
+      <div class="cell reveal" style="transition-delay:.15s;"><img class="icon" src="images/icons/icon-onsen.png" alt="温泉キャンプ"><div class="v">温泉キャンプ</div></div>
+    </div>
+    <div class="photo-row">
+      <div class="ph"><img src="images/onsen-building.jpg" alt="島ヶ原温泉やぶっちゃ 温泉棟"></div>
+      <div class="ph"><img src="images/campsite.jpg" alt="やぶっちゃ オートキャンプ場"></div>
+    </div>
+  </div>
+</section>
+
+<section id="lineup" class="band">
+  <div class="wrap">
+    <span class="eyebrow reveal">LINE UP</span>
+    <h2 class="reveal">出演者</h2>
+    <p class="lead reveal">豪華アーティスト・芸人陣の出演を続々予定！発表をお楽しみに♪ 決まり次第、公式SNSとこのページでいち早くお知らせします。</p>
+
+    <div class="lineup-sub reveal"><img class="lineup-icon" src="images/icons/icon-music.png" alt="">MUSIC ARTIST</div>
+  </div>
+  <div class="marquee-wrap reveal">
+    <div class="marquee-track">
+      <div class="artist-card"><div class="thumb">01</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card"><div class="thumb">02</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card"><div class="thumb">03</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card"><div class="thumb">04</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card"><div class="thumb">05</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card"><div class="thumb">06</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card"><div class="thumb">07</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card"><div class="thumb">08</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <!-- 同じ内容を複製してループを継ぎ目なく見せています -->
+      <div class="artist-card" aria-hidden="true"><div class="thumb">01</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb">02</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb">03</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb">04</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb">05</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb">06</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb">07</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb">08</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+    </div>
+  </div>
+  <div class="wrap lineup-divider">
+    <div class="lineup-sub reveal"><img class="lineup-icon" src="images/icons/icon-owarai.png" alt="">COMEDIAN</div>
+  </div>
+  <div class="marquee-wrap reveal">
+    <div class="marquee-track reverse">
+      <div class="artist-card"><div class="thumb">01</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card"><div class="thumb">02</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card"><div class="thumb">03</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <!-- 同じ内容を複製してループを継ぎ目なく見せています -->
+      <div class="artist-card" aria-hidden="true"><div class="thumb">01</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb">02</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb">03</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="ticket">
+  <div class="wrap">
+    <span class="eyebrow reveal">TICKET</span>
+    <h2 class="reveal">チケット</h2>
+    <div class="ticket-cards">
+      <div class="ticket-card">
+        <div class="who">大人</div>
+        <div class="price">¥3,000<small>前売</small></div>
+        <div class="day">当日券 ¥3,500</div>
+      </div>
+      <div class="ticket-card">
+        <div class="who">子供(小学生〜中学生)</div>
+        <div class="price">¥1,500<small>前売</small></div>
+        <div class="day">当日券 ¥2,000</div>
+      </div>
+      <div class="ticket-card">
+        <div class="who">幼児(未就学児)</div>
+        <div class="price">無料<small>前売・当日とも</small></div>
+        <div class="day">保護者同伴</div>
+      </div>
+    </div>
+    <p class="note">前売券は島ヶ原温泉やぶっちゃ館内にて手売り予定。オンライン販売(Peatix等)の利用有無は検討中で、決まり次第お知らせします。<br>小雨決行。台風・荒天が予想される場合は前日中を目安に開催可否を公式SNSでご案内します。</p>
+  </div>
+</section>
+
+<section id="access" class="band">
+  <div class="wrap">
+    <span class="eyebrow reveal">ACCESS</span>
+    <h2 class="reveal">会場・アクセス</h2>
+    <div class="access-grid">
+      <div class="ph"><img src="images/facility-map.jpg" alt="島ヶ原温泉やぶっちゃ 施設マップ"></div>
+      <div class="access-list">
+        <div class="row"><span class="k">会場名</span><span class="v">島ヶ原温泉やぶっちゃ<br>フリーサイト</span></div>
+        <div class="row"><span class="k">所在地</span><span class="v">三重県伊賀市島ヶ原13680</span></div>
+        <div class="row"><span class="k">駐車場</span><span class="v">台数など調整中</span></div>
+        <div class="row"><span class="k">出店</span><span class="v">キッチンカー多数<br>ワークショップあり</span></div>
+      </div>
+    </div>
+
+    <div class="map-embed reveal">
+      <iframe src="https://www.google.com/maps?q=%E4%B8%89%E9%87%8D%E7%9C%8C%E4%BC%8A%E8%B3%80%E5%B8%82%E5%B3%B6%E3%83%B6%E5%8E%9F13680&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="会場地図(三重県伊賀市島ヶ原13680)"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="onsen">
+  <div class="wrap">
+    <span class="eyebrow reveal">ONSEN</span>
+    <h2 class="reveal">温泉</h2>
+    <p class="lead reveal">1日遊んだあとは、併設の「島ヶ原温泉やぶっちゃ」でゆっくり汗を流してお帰りいただけます。フェス終了後のひと湯浴びも、やぶっちゃならではのお楽しみです。</p>
+
+    <div class="onsen-grid">
+      <div class="ph reveal"><img src="images/onsen-building.jpg" alt="併設の島ヶ原温泉やぶっちゃ"></div>
+      <div class="onsen-copy reveal">
+        <h3>ご利用にあたって</h3>
+        <p class="warn-lead">以下に該当する方は、温泉のご利用をお断りする場合がございます。あらかじめご了承ください。</p>
+        <ul class="warn-list">
+          <li>泥酔されている場合、或いは明らかに言動、行動にその症状が見られる場合。</li>
+          <li>イレズミ、タトゥーその他類似シールが入っている方。</li>
+          <li>入館を希望する方が、他のお客様に対して著しい迷惑を及ぼす言動をしたとき。</li>
+        </ul>
+        <a class="btn btn-fill onsen-site-btn" style="background:var(--forest); color:#fff;" href="https://www.yabutcha.com/" target="_blank" rel="noopener">公式サイトを見る</a>
+      </div>
+    </div>
+
+    <div class="onsen-price reveal">
+      <h3>ご利用料金</h3>
+      <div class="ticket-cards">
+        <div class="ticket-card">
+          <div class="who">大人</div>
+          <div class="price">¥900</div>
+        </div>
+        <div class="ticket-card">
+          <div class="who">小人(3〜12歳)</div>
+          <div class="price">¥450</div>
+        </div>
+        <div class="ticket-card">
+          <div class="who">シルバー(70歳〜)</div>
+          <div class="price">¥720</div>
+        </div>
+      </div>
+      <div class="access-list onsen-extra-list">
+        <div class="row"><span class="k">バスタオル(貸出)</span><span class="v">¥100</span></div>
+        <div class="row"><span class="k">フェイスタオル(販売)</span><span class="v">¥150</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-title">IGA LAUGH &amp; MUSIC FES 2026</div>
+  <div class="footer-yabutcha-logo">
+    <img src="images/yabutcha-logo-transparent.png" alt="島ヶ原温泉やぶっちゃ">
+  </div>
+  <div class="col">
+    主催:(株)島ヶ原リゾート「島ヶ原温泉やぶっちゃ」<br>
+    企画・運営:M's Commit.LLC<br>
+    ※本ページは制作中です。内容は予告なく変更になる場合があります。
+  </div>
+</footer>
+
+<script>
+(function () {
+  // ヒーロー動画のループの継ぎ目をフェードでなめらかに繋ぐ
+  var video = document.querySelector('.hero video');
+  if (video) {
+    var FADE = 0.8; // 秒
+    var tick = function () {
+      if (video.duration) {
+        var t = video.currentTime;
+        var d = video.duration;
+        var op = 1;
+        if (t < FADE) op = t / FADE;
+        else if (d - t < FADE) op = (d - t) / FADE;
+        video.style.opacity = Math.max(0, Math.min(1, op));
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+})();
+
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (e) { e.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+</body>
+</html>
