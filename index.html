@@ -157,7 +157,29 @@
   .ticket-card .price small{display:block; font-size:12px; font-family:'Zen Maru Gothic',sans-serif; color:var(--ink-soft); margin-top:2px;}
   .ticket-card .day{margin-top:8px; font-size:11.5px; color:var(--ink-soft);}
   .note{margin-top:28px; font-size:12.5px; color:var(--ink-soft); line-height:2;}
+  .ticket-perk{
+    margin-top:18px; display:inline-flex; align-items:center; gap:8px;
+    background:var(--cream); border:1px solid var(--line); border-radius:999px;
+    padding:10px 18px; font-size:13px; font-weight:700; color:var(--forest);
+  }
   .foodtruck-icon{width:44px; height:44px; object-fit:contain; margin:0 auto;}
+
+  /* WORKSHOP */
+  .workshop-cards{grid-template-columns:repeat(4,1fr);}
+  @media (max-width:700px){ .workshop-cards{grid-template-columns:1fr 1fr;} }
+  @media (max-width:460px){ .workshop-cards{grid-template-columns:1fr;} }
+  .workshop-emoji{
+    width:56px; height:56px; margin:0 auto; border-radius:50%;
+    background:var(--cream); display:flex; align-items:center; justify-content:center;
+    font-size:26px;
+    animation:icon-dance 2.4s ease-in-out infinite;
+  }
+  .workshop-cards .ticket-card:nth-child(2) .workshop-emoji{animation-delay:.2s;}
+  .workshop-cards .ticket-card:nth-child(3) .workshop-emoji{animation-delay:.4s;}
+  .workshop-cards .ticket-card:nth-child(4) .workshop-emoji{animation-delay:.6s;}
+  @media (prefers-reduced-motion: reduce){ .workshop-emoji{animation:none;} }
+  .workshop-cards .who{margin-top:12px;}
+  .workshop-sub{display:block; margin-top:6px; font-size:11px; font-weight:700; color:var(--ink-soft);}
 
   /* LINEUP */
   .lineup-sub{margin-top:36px; font-size:clamp(20px,4.4vw,30px); font-weight:900; letter-spacing:.06em; color:var(--forest); display:flex; align-items:center; gap:10px;}
@@ -199,9 +221,7 @@
   .reveal.is-visible{opacity:1; transform:translateY(0);}
 
   /* ACCESS */
-  .access-grid{margin-top:36px; display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start;}
-  @media (max-width:700px){ .access-grid{grid-template-columns:1fr;} }
-  .access-grid .ph{border-radius:16px; overflow:hidden; aspect-ratio:4/3;}
+  .access-list{margin-top:36px; max-width:480px;}
   .access-list .row{display:flex; justify-content:space-between; gap:12px; padding:12px 0; border-bottom:1px dashed var(--line); font-size:13.5px;}
   .access-list .row:last-child{border-bottom:none;}
   .access-list .k{color:var(--ink-soft); flex-shrink:0;}
@@ -386,10 +406,41 @@
   </div>
 </section>
 
+<section id="workshop" class="band">
+  <div class="wrap">
+    <span class="eyebrow reveal">WORKSHOP</span>
+    <h2 class="reveal">ワークショップ</h2>
+    <p class="lead reveal">大人も子どもも楽しめる体験プログラムを企画検討中。フリーサイトのあちこちで、遊びながら参加できるコンテンツを予定しています。実施内容・実施可否は現在調整中で、変更になる場合があります。</p>
+    <div class="ticket-cards workshop-cards">
+      <div class="ticket-card reveal">
+        <div class="workshop-emoji">🐟</div>
+        <div class="who">あゆの掴み取り</div>
+        <div class="day">企画検討中</div>
+      </div>
+      <div class="ticket-card reveal" style="transition-delay:.05s;">
+        <div class="workshop-emoji">🥁</div>
+        <div class="who">キッズドラム・太鼓体験<span class="workshop-sub">THE BLUE HEARTS かじわらさん</span></div>
+        <div class="day">企画検討中</div>
+      </div>
+      <div class="ticket-card reveal" style="transition-delay:.1s;">
+        <div class="workshop-emoji">🎣</div>
+        <div class="who">フライフィッシング<br>キャスティング体験</div>
+        <div class="day">企画検討中</div>
+      </div>
+      <div class="ticket-card reveal" style="transition-delay:.15s;">
+        <div class="workshop-emoji">🏀</div>
+        <div class="who">バスケ<br>フリースロー体験</div>
+        <div class="day">企画検討中</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="ticket">
   <div class="wrap">
     <span class="eyebrow reveal">TICKET</span>
     <h2 class="reveal">チケット</h2>
+    <p class="ticket-perk reveal">♨️ どのチケットにも「島ヶ原温泉やぶっちゃ」入浴券が付いています</p>
     <div class="ticket-cards">
       <div class="ticket-card">
         <div class="who">大人</div>
@@ -407,7 +458,7 @@
         <div class="day">保護者同伴</div>
       </div>
     </div>
-    <p class="note">前売券は島ヶ原温泉やぶっちゃ館内にて手売り予定。オンライン販売(Peatix等)の利用有無は検討中で、決まり次第お知らせします。<br>小雨決行。台風・荒天が予想される場合は前日中を目安に開催可否を公式SNSでご案内します。</p>
+    <p class="note">前売券はPeatixでのオンライン販売、および島ヶ原温泉やぶっちゃ館内での手売りを予定しています。Peatixページは準備中で、公開次第このページと公式SNSでお知らせします。<br>小雨決行。台風・荒天が予想される場合は前日中を目安に開催可否を公式SNSでご案内します。</p>
   </div>
 </section>
 
@@ -415,14 +466,11 @@
   <div class="wrap">
     <span class="eyebrow reveal">ACCESS</span>
     <h2 class="reveal">会場・アクセス</h2>
-    <div class="access-grid">
-      <div class="ph"><img src="images/facility-map.jpg" alt="島ヶ原温泉やぶっちゃ 施設マップ"></div>
-      <div class="access-list">
-        <div class="row"><span class="k">会場名</span><span class="v">島ヶ原温泉やぶっちゃ<br>フリーサイト</span></div>
-        <div class="row"><span class="k">所在地</span><span class="v">三重県伊賀市島ヶ原13680</span></div>
-        <div class="row"><span class="k">駐車場</span><span class="v">台数など調整中</span></div>
-        <div class="row"><span class="k">出店</span><span class="v">キッチンカー多数<br>ワークショップあり</span></div>
-      </div>
+    <div class="access-list reveal">
+      <div class="row"><span class="k">会場名</span><span class="v">島ヶ原温泉やぶっちゃ<br>フリーサイト</span></div>
+      <div class="row"><span class="k">所在地</span><span class="v">三重県伊賀市島ヶ原13680</span></div>
+      <div class="row"><span class="k">駐車場</span><span class="v">台数など調整中</span></div>
+      <div class="row"><span class="k">出店</span><span class="v">キッチンカー多数<br>ワークショップあり</span></div>
     </div>
 
     <div class="map-embed reveal">
