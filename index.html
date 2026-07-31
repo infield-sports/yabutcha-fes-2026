@@ -21,7 +21,7 @@
     --line:rgba(42,36,28,0.14);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; scroll-padding-top:84px;}
   body{font-family:'Zen Maru Gothic', sans-serif; background:var(--cream); color:var(--ink); line-height:1.8;}
   .hand{font-family:'Yomogi', cursive;}
   a{color:inherit;}
@@ -281,7 +281,10 @@
   <a href="#top"><img class="header-logo" src="images/logo-06-transparent.png" alt="IGA LAUGH & MUSIC FES 2026"></a>
   <nav class="header-nav">
     <a class="btn btn-soft" href="#news">お知らせ</a>
-    <a class="btn btn-soft" href="#lineup">出演者</a>
+    <a class="btn btn-soft" href="#artists">Artists</a>
+    <a class="btn btn-soft" href="#comedian">Comedian</a>
+    <a class="btn btn-soft" href="#workshop">Workshop</a>
+    <a class="btn btn-soft" href="#foodtruck">Kitchencar</a>
     <a class="btn btn-soft" href="#access">アクセス</a>
     <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="#ticket">チケット</a>
   </nav>
@@ -342,7 +345,7 @@
     <h2 class="reveal">出演者</h2>
     <p class="lead reveal">豪華アーティスト・芸人陣の出演を続々予定！発表をお楽しみに♪ 決まり次第、公式SNSとこのページでいち早くお知らせします。</p>
 
-    <div class="lineup-sub reveal"><img class="lineup-icon" src="images/icons/icon-music.png" alt="">MUSIC ARTIST</div>
+    <div id="artists" class="lineup-sub reveal"><img class="lineup-icon" src="images/icons/icon-music.png" alt="">MUSIC ARTIST</div>
   </div>
   <div class="marquee-wrap reveal">
     <div class="marquee-track">
@@ -365,7 +368,7 @@
       <div class="artist-card" aria-hidden="true"><div class="thumb">08</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
     </div>
   </div>
-  <div class="wrap lineup-divider">
+  <div id="comedian" class="wrap lineup-divider">
     <div class="lineup-sub reveal"><img class="lineup-icon" src="images/icons/icon-owarai.png" alt="">COMEDIAN</div>
   </div>
   <div class="marquee-wrap reveal">
