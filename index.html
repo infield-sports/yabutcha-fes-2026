@@ -46,6 +46,36 @@
     .header-nav .btn{padding:7px 14px; font-size:11px;}
   }
 
+  /* NAV TOGGLE (mobile hamburger) */
+  .nav-toggle{
+    display:none; position:relative; z-index:61; width:40px; height:40px; flex-shrink:0;
+    border:none; background:none; cursor:pointer; padding:0;
+    flex-direction:column; align-items:center; justify-content:center; gap:5px;
+  }
+  .nav-toggle span{width:22px; height:2px; background:var(--ink); border-radius:2px; transition:transform .25s ease, opacity .25s ease;}
+  .nav-toggle.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.is-active span:nth-child(2){opacity:0;}
+  .nav-toggle.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .nav-scrim{display:none; position:fixed; inset:0; background:rgba(20,20,15,0.4); z-index:55;}
+  .nav-scrim.is-open{display:block;}
+
+  @media (max-width:700px){
+    .nav-toggle{display:flex;}
+    .header-nav{
+      position:fixed; top:0; right:0; z-index:60;
+      height:100vh; width:min(78vw,320px);
+      background:#fff; flex-wrap:nowrap;
+      flex-direction:column; align-items:stretch; justify-content:flex-start;
+      padding:96px 24px 24px; gap:6px;
+      box-shadow:-10px 0 32px rgba(42,36,28,0.2);
+      transform:translateX(100%); transition:transform .3s ease;
+    }
+    .header-nav.is-open{transform:translateX(0);}
+    .header-nav .btn{width:100%; justify-content:flex-start; padding:12px 16px; font-size:13.5px;}
+    .header-nav .btn-fill{margin-top:10px; justify-content:center;}
+  }
+
   /* HERO */
   .hero{
     position:relative; height:92vh; min-height:520px; background:var(--ink);
@@ -279,7 +309,10 @@
 
 <header>
   <a href="#top"><img class="header-logo" src="images/logo-06-transparent.png" alt="IGA LAUGH & MUSIC FES 2026"></a>
-  <nav class="header-nav">
+  <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="header-nav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="header-nav" id="header-nav">
     <a class="btn btn-soft" href="#news">お知らせ</a>
     <a class="btn btn-soft" href="#artists">Artists</a>
     <a class="btn btn-soft" href="#comedian">Comedian</a>
@@ -288,6 +321,7 @@
     <a class="btn btn-soft" href="#access">アクセス</a>
     <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="#ticket">チケット</a>
   </nav>
+  <div class="nav-scrim"></div>
 </header>
 
 <section class="hero" id="top">
@@ -541,6 +575,40 @@
 </footer>
 
 <script>
+(function () {
+  // スマホ用ハンバーガーメニューの開閉
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.header-nav');
+  var scrim = document.querySelector('.nav-scrim');
+  if (!toggle || !nav) return;
+
+  function closeNav() {
+    nav.classList.remove('is-open');
+    toggle.classList.remove('is-active');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (scrim) scrim.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  function openNav() {
+    nav.classList.add('is-open');
+    toggle.classList.add('is-active');
+    toggle.setAttribute('aria-expanded', 'true');
+    if (scrim) scrim.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  toggle.addEventListener('click', function () {
+    if (nav.classList.contains('is-open')) closeNav(); else openNav();
+  });
+  if (scrim) scrim.addEventListener('click', closeNav);
+  nav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeNav);
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 700) closeNav();
+  });
+})();
+
 (function () {
   // ヒーロー動画のループの継ぎ目をフェードでなめらかに繋ぐ
   var video = document.querySelector('.hero video');
