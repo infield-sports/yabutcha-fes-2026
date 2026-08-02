@@ -142,6 +142,10 @@
   .btn-fill{background:var(--terracotta); color:#fff;}
   .btn-outline{background:transparent; color:#fff; border-color:rgba(255,255,255,0.8);}
   .btn-soft{background:transparent; color:var(--ink); border-color:transparent; border-radius:8px; font-weight:700;}
+  .btn-disabled{
+    background:var(--cream); color:var(--ink-soft); border-color:var(--line);
+    cursor:not-allowed; opacity:.8;
+  }
   .btn-soft:hover{background:var(--forest); color:#fff;}
 
   /* SECTIONS */
@@ -533,7 +537,8 @@
       </div>
     </div>
 
-    <p class="note">前売券はやぶっちゃ店頭、およびオンライン(Peatix)で販売予定です。Peatixページは準備中で、公開次第このページと公式SNSでお知らせします。<br>小雨決行。台風・荒天が予想される場合は前日中を目安に開催可否を公式SNSでご案内します。</p>
+    <p class="note">前売券はやぶっちゃ店頭、およびPeatixでのオンラインチケットにて販売中です。<br>小雨決行。台風・荒天が予想される場合は前日中を目安に開催可否を公式SNSでご案内します。</p>
+    <span class="btn btn-disabled" aria-disabled="true" style="margin-top:18px;">🎫 オンラインチケット購入(準備中)</span>
   </div>
 </section>
 
@@ -546,6 +551,7 @@
       <div class="row"><span class="k">所在地</span><span class="v">三重県伊賀市島ヶ原13680</span></div>
       <div class="row"><span class="k">駐車場</span><span class="v">無料駐車場あり</span></div>
     </div>
+    <a class="btn btn-fill" style="background:var(--forest); color:#fff; margin-top:24px;" href="https://www.yabutcha.com/access/index.html" target="_blank" rel="noopener">公式サイトでアクセスを見る</a>
 
     <div class="map-embed reveal">
       <iframe src="https://www.google.com/maps?q=%E4%B8%89%E9%87%8D%E7%9C%8C%E4%BC%8A%E8%B3%80%E5%B8%82%E5%B3%B6%E3%83%B6%E5%8E%9F13680&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="会場地図(三重県伊賀市島ヶ原13680)"></iframe>
