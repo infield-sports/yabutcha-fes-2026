@@ -168,6 +168,7 @@
     width:56px; height:56px; object-fit:contain; margin:0 auto;
     animation:icon-dance 2.4s ease-in-out infinite;
   }
+  .info-grid .icon.icon-photo{object-fit:cover; border-radius:50%;}
   .info-grid .cell:nth-child(2) .icon{animation-delay:.2s;}
   .info-grid .cell:nth-child(3) .icon{animation-delay:.4s;}
   .info-grid .cell:nth-child(4) .icon{animation-delay:.6s;}
@@ -237,7 +238,7 @@
     display:flex; gap:14px; width:max-content;
     animation:marquee-left 26s linear infinite;
   }
-  .marquee-track.reverse{animation-name:marquee-right;}
+  .marquee-track.reverse{animation-name:marquee-right; animation-duration:11s;}
   .marquee-track:hover{animation-play-state:paused;}
   @keyframes marquee-left{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
   @keyframes marquee-right{ from{transform:translateX(-50%);} to{transform:translateX(0);} }
@@ -260,6 +261,44 @@
   .artist-card .meta{padding:16px 14px; text-align:center;}
   .artist-card .name{font-weight:900; font-size:15px;}
   .artist-card .tag{font-size:11px; color:var(--ink-soft); margin-top:4px; letter-spacing:.05em;}
+  .artist-card[data-name]{cursor:pointer;}
+  .artist-card[data-name]:focus-visible{outline:3px solid var(--terracotta); outline-offset:2px;}
+
+  /* ARTIST INTRO MODAL */
+  .artist-modal{
+    display:none; position:fixed; inset:0; z-index:90;
+    align-items:center; justify-content:center; padding:24px;
+  }
+  .artist-modal.is-open{display:flex;}
+  .artist-modal-scrim{position:absolute; inset:0; background:rgba(20,20,15,0.6);}
+  .artist-modal-card{
+    position:relative; z-index:1; width:100%; max-width:400px;
+    background:#fff; border-radius:24px; padding:32px 26px 28px; text-align:center;
+    box-shadow:0 24px 60px rgba(20,20,15,0.35);
+    transform:scale(.3) translateY(50px); opacity:0;
+    animation:artist-pop .55s cubic-bezier(.28,1.65,.55,1) forwards;
+  }
+  @keyframes artist-pop{
+    0%{transform:scale(.3) translateY(50px); opacity:0;}
+    65%{transform:scale(1.08) translateY(-8px); opacity:1;}
+    100%{transform:scale(1) translateY(0); opacity:1;}
+  }
+  .artist-modal-close{
+    position:absolute; top:14px; right:14px; width:34px; height:34px;
+    border-radius:50%; border:none; background:var(--cream); color:var(--ink);
+    font-size:18px; line-height:1; cursor:pointer;
+  }
+  .artist-modal-photo{
+    width:150px; height:150px; margin:0 auto; border-radius:50%; overflow:hidden;
+    background:linear-gradient(135deg, var(--forest), var(--terracotta));
+  }
+  .artist-modal-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .artist-modal-tag{margin-top:18px; font-size:12px; font-weight:900; letter-spacing:.1em; color:var(--terracotta);}
+  .artist-modal-name{margin-top:6px; font-size:22px; font-weight:900; line-height:1.4;}
+  .artist-modal-bio{margin-top:14px; font-size:13.5px; color:var(--ink-soft); line-height:1.9;}
+  @media (prefers-reduced-motion: reduce){
+    .artist-modal-card{animation:none; transform:none; opacity:1;}
+  }
 
   .mc-credit{
     margin-top:28px; display:inline-flex; align-items:center; gap:18px;
@@ -338,7 +377,7 @@
   <nav class="header-nav" id="header-nav">
     <a class="btn btn-soft" href="#news">お知らせ</a>
     <a class="btn btn-soft" href="#artists">アーティスト</a>
-    <a class="btn btn-soft" href="#comedian">コメディアン</a>
+    <a class="btn btn-soft" href="#comedian">お笑い芸人</a>
     <a class="btn btn-soft" href="#workshop">ワークショップ</a>
     <a class="btn btn-soft" href="#foodtruck">キッチンカー</a>
     <a class="btn btn-soft" href="#access">アクセス</a>
@@ -389,7 +428,7 @@
       <div class="cell reveal"><img class="icon" src="images/icons/icon-owarai.png" alt="お笑いライブ"><div class="v">お笑いライブ</div></div>
       <div class="cell reveal" style="transition-delay:.05s;"><img class="icon" src="images/icons/icon-music.png" alt="音楽ライブ"><div class="v">音楽ライブ</div></div>
       <div class="cell reveal" style="transition-delay:.1s;"><img class="icon" src="images/icons/icon-foodtruck.png" alt="キッチンカーグルメ"><div class="v">キッチンカー<br>グルメ</div></div>
-      <div class="cell reveal" style="transition-delay:.15s;"><img class="icon" src="images/icons/icon-onsen.png" alt="ワークショップ"><div class="v">ワークショップ</div></div>
+      <div class="cell reveal" style="transition-delay:.15s;"><img class="icon icon-photo" src="images/icons/icon-workshop.jpg" alt="ワークショップ"><div class="v">ワークショップ</div></div>
     </div>
     <div class="about-visual reveal">
       <img src="images/fes-illustration.png" alt="IGA LAUGH & MUSIC FES 2026 お笑い・音楽・キッチンカー・温泉・キャンプのイメージイラスト">
@@ -407,13 +446,21 @@
   </div>
   <div class="marquee-wrap reveal">
     <div class="marquee-track">
-      <div class="artist-card"><div class="thumb"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"></div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" tabindex="0" data-name="デリカテッセン" data-tag="ARTIST" data-photo="images/artists/delicatessen.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"></div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" tabindex="0" data-name="DJ SHU-C from osaka L.O.L." data-tag="ARTIST" data-photo="images/artists/dj-shuc.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/dj-shuc.jpg" alt="DJ SHU-C from osaka L.O.L." loading="lazy"></div><div class="meta"><div class="name">DJ SHU-C<br>from osaka L.O.L.</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" tabindex="0" data-name="イチゼンパッカー" data-tag="ARTIST" data-photo="images/artists/ichizenpacker.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/ichizenpacker.jpg" alt="イチゼンパッカー" loading="lazy"></div><div class="meta"><div class="name">イチゼンパッカー</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" tabindex="0" data-name="ウルトラソウル" data-tag="ARTIST" data-photo="images/artists/ultrasoul.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/ultrasoul.jpg" alt="ウルトラソウル" loading="lazy"></div><div class="meta"><div class="name">ウルトラソウル</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" tabindex="0" data-name="世史久" data-tag="ARTIST" data-photo="images/artists/seshiku.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/seshiku.jpg" alt="世史久" loading="lazy"></div><div class="meta"><div class="name">世史久</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" tabindex="0" data-name="わっしょいマン" data-tag="ARTIST" data-photo="images/artists/wasshoiman.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"></div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">ARTIST</div></div></div>
       <div class="artist-card"><div class="thumb">🎤</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
-      <div class="artist-card"><div class="thumb"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"></div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">ARTIST</div></div></div>
       <!-- 同じ内容を複製してループを継ぎ目なく見せています -->
-      <div class="artist-card" aria-hidden="true"><div class="thumb"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"></div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="デリカテッセン" data-tag="ARTIST" data-photo="images/artists/delicatessen.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"></div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="DJ SHU-C from osaka L.O.L." data-tag="ARTIST" data-photo="images/artists/dj-shuc.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/dj-shuc.jpg" alt="DJ SHU-C from osaka L.O.L." loading="lazy"></div><div class="meta"><div class="name">DJ SHU-C<br>from osaka L.O.L.</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="イチゼンパッカー" data-tag="ARTIST" data-photo="images/artists/ichizenpacker.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/ichizenpacker.jpg" alt="イチゼンパッカー" loading="lazy"></div><div class="meta"><div class="name">イチゼンパッカー</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="ウルトラソウル" data-tag="ARTIST" data-photo="images/artists/ultrasoul.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/ultrasoul.jpg" alt="ウルトラソウル" loading="lazy"></div><div class="meta"><div class="name">ウルトラソウル</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="世史久" data-tag="ARTIST" data-photo="images/artists/seshiku.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/seshiku.jpg" alt="世史久" loading="lazy"></div><div class="meta"><div class="name">世史久</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="わっしょいマン" data-tag="ARTIST" data-photo="images/artists/wasshoiman.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"></div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">ARTIST</div></div></div>
       <div class="artist-card" aria-hidden="true"><div class="thumb">🎤</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
-      <div class="artist-card" aria-hidden="true"><div class="thumb"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"></div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">ARTIST</div></div></div>
     </div>
   </div>
   <div id="comedian" class="wrap lineup-divider">
@@ -421,11 +468,11 @@
   </div>
   <div class="marquee-wrap reveal">
     <div class="marquee-track reverse">
-      <div class="artist-card"><div class="thumb">🎭</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" tabindex="0" data-name="やぶっちゃトリオ" data-tag="COMEDIAN" data-photo="images/comedians/yabutcha-trio.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/comedians/yabutcha-trio.jpg" alt="やぶっちゃトリオ" loading="lazy"></div><div class="meta"><div class="name">やぶっちゃトリオ</div><div class="tag">COMEDIAN</div></div></div>
       <div class="artist-card"><div class="thumb">🎭</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
       <div class="artist-card"><div class="thumb">🎭</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
       <!-- 同じ内容を複製してループを継ぎ目なく見せています -->
-      <div class="artist-card" aria-hidden="true"><div class="thumb">🎭</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="やぶっちゃトリオ" data-tag="COMEDIAN" data-photo="images/comedians/yabutcha-trio.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/comedians/yabutcha-trio.jpg" alt="やぶっちゃトリオ" loading="lazy"></div><div class="meta"><div class="name">やぶっちゃトリオ</div><div class="tag">COMEDIAN</div></div></div>
       <div class="artist-card" aria-hidden="true"><div class="thumb">🎭</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
       <div class="artist-card" aria-hidden="true"><div class="thumb">🎭</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
     </div>
@@ -488,7 +535,7 @@
     <p class="lead reveal">大人も子どもも楽しめる体験型ワークショップで、伊賀の大自然を全力で楽しもう！</p>
     <div class="ticket-cards workshop-cards">
       <div class="ticket-card reveal">
-        <div class="workshop-emoji">🥁</div>
+        <div class="truck-photo"><img src="images/workshop/rhythm-play.jpg" alt="リズム遊び" loading="lazy"></div>
         <div class="who">リズム遊び<span class="workshop-sub">元THE BLUE HEARTS 梶原徹也</span></div>
       </div>
       <div class="ticket-card reveal" style="transition-delay:.05s;">
@@ -500,7 +547,7 @@
         <div class="who">フライフィッシング遊び</div>
       </div>
       <div class="ticket-card reveal" style="transition-delay:.15s;">
-        <div class="workshop-emoji">🏀</div>
+        <div class="truck-photo"><img src="images/workshop/freethrow.jpg" alt="フリースロー" loading="lazy"></div>
         <div class="who">フリースロー<span class="workshop-sub">MIE SHINOBI GATHERS</span></div>
       </div>
     </div>
@@ -562,7 +609,7 @@
     </div>
 
     <p class="note">前売券はやぶっちゃ店頭、およびPeatixでのオンラインチケットにて販売中です。<br>小雨決行。台風・荒天が予想される場合は前日中を目安に開催可否を公式SNSでご案内します。</p>
-    <a class="btn btn-fill" style="margin-top:18px;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener">🎫 Peatixでチケットを購入</a>
+    <a class="btn btn-fill" style="margin-top:18px;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener">🎫 オンラインチケット</a>
   </div>
 </section>
 
@@ -629,6 +676,17 @@
   </div>
 </section>
 
+<div class="artist-modal" id="artist-modal" aria-hidden="true">
+  <div class="artist-modal-scrim" data-modal-close></div>
+  <div class="artist-modal-card" role="dialog" aria-modal="true" aria-labelledby="artist-modal-name">
+    <button class="artist-modal-close" type="button" aria-label="閉じる" data-modal-close>&times;</button>
+    <div class="artist-modal-photo"><img id="artist-modal-img" src="" alt=""></div>
+    <div class="artist-modal-tag" id="artist-modal-tag"></div>
+    <div class="artist-modal-name" id="artist-modal-name"></div>
+    <p class="artist-modal-bio" id="artist-modal-bio"></p>
+  </div>
+</div>
+
 <footer>
   <div class="footer-title">IGA LAUGH &amp; MUSIC FES 2026</div>
   <div class="footer-yabutcha-logo">
@@ -644,6 +702,51 @@
 </footer>
 
 <script>
+(function () {
+  // アーティスト/芸人カードをクリックすると紹介ポップアップを表示
+  var modal = document.getElementById('artist-modal');
+  if (!modal) return;
+  var modalImg = document.getElementById('artist-modal-img');
+  var modalTag = document.getElementById('artist-modal-tag');
+  var modalName = document.getElementById('artist-modal-name');
+  var modalBio = document.getElementById('artist-modal-bio');
+  var lastFocused = null;
+
+  function openModal(card) {
+    modalImg.src = card.getAttribute('data-photo');
+    modalImg.alt = card.getAttribute('data-name');
+    modalTag.textContent = card.getAttribute('data-tag') || '';
+    modalName.textContent = card.getAttribute('data-name') || '';
+    modalBio.textContent = card.getAttribute('data-bio') || '';
+    lastFocused = document.activeElement;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  document.querySelectorAll('.artist-card[data-name]').forEach(function (card) {
+    card.addEventListener('click', function () { openModal(card); });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(card);
+      }
+    });
+  });
+  modal.querySelectorAll('[data-modal-close]').forEach(function (el) {
+    el.addEventListener('click', closeModal);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  });
+})();
+
 (function () {
   // スマホ用ハンバーガーメニューの開閉
   var toggle = document.querySelector('.nav-toggle');
