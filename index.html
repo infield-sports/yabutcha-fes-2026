@@ -266,10 +266,14 @@
   .artist-card .name{font-weight:900; font-size:15px;}
   .artist-card .tag{font-size:11px; color:var(--ink-soft); margin-top:4px; letter-spacing:.05em;}
 
-  .mc-credit{margin-top:24px; display:inline-flex; align-items:center; gap:10px;}
-  .mc-photo{width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0;}
-  .mc-label{font-size:11px; font-weight:900; color:var(--terracotta); letter-spacing:.08em;}
-  .mc-name{font-size:14px; font-weight:700;}
+  .mc-credit{
+    margin-top:28px; display:inline-flex; align-items:center; gap:18px;
+    background:#fff; border:1px solid var(--line); border-radius:18px;
+    padding:14px 28px 14px 14px;
+  }
+  .mc-photo{width:88px; height:88px; border-radius:50%; object-fit:cover; flex-shrink:0;}
+  .mc-label{font-size:12px; font-weight:900; color:var(--terracotta); letter-spacing:.1em;}
+  .mc-name{margin-top:4px; font-size:20px; font-weight:900;}
 
   /* scroll reveal */
   .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
@@ -434,8 +438,10 @@
   <div class="wrap">
     <div class="mc-credit reveal">
       <img class="mc-photo" src="images/mc/nasu-ayumi.jpg" alt="那須歩美" loading="lazy">
-      <span class="mc-label">司会</span>
-      <span class="mc-name">那須歩美</span>
+      <div>
+        <div class="mc-label">司会</div>
+        <div class="mc-name">那須歩美</div>
+      </div>
     </div>
   </div>
 </section>
