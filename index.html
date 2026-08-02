@@ -27,6 +27,7 @@
   a{color:inherit;}
   img{display:block; width:100%; height:100%; object-fit:cover;}
   .wrap{max-width:920px; margin:0 auto; padding:0 6vw;}
+  .wrap-wide{max-width:1240px;}
 
   header{
     position:sticky; top:0; z-index:50;
@@ -184,8 +185,10 @@
   @media (max-width:700px){ .ticket-cards{grid-template-columns:1fr;} }
   .ticket-card{
     background:var(--cream); border:1px solid var(--line); border-radius:16px;
-    padding:24px 20px; text-align:center;
+    padding:24px 20px; text-align:center; overflow:hidden;
   }
+  .truck-photo{margin:-24px -20px 16px; aspect-ratio:4/3; background:var(--line);}
+  .truck-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .ticket-card .who{font-weight:900; font-size:14.5px;}
   .ticket-card .price{margin-top:12px; font-family:'Yomogi',cursive; font-size:28px; color:var(--terracotta);}
   .ticket-card .price small{display:block; font-size:12px; font-family:'Zen Maru Gothic',sans-serif; color:var(--ink-soft); margin-top:2px;}
@@ -247,6 +250,7 @@
     transition:filter .3s ease;
   }
   .artist-card:hover .thumb{filter:brightness(1.08);}
+  .artist-card .thumb img{width:100%; height:100%; object-fit:cover; display:block;}
   .artist-card .meta{padding:16px 14px; text-align:center;}
   .artist-card .name{font-weight:900; font-size:15px;}
   .artist-card .tag{font-size:11px; color:var(--ink-soft); margin-top:4px; letter-spacing:.05em;}
@@ -329,7 +333,7 @@
 </header>
 
 <section class="hero" id="top">
-  <video autoplay muted loop playsinline poster="images/freesite.jpg">
+  <video autoplay muted loop playsinline>
     <source src="images/hero.mov">
   </video>
   <div class="hero-kicker">IGA LAUGH &amp; MUSIC FES 2026</div>
@@ -388,13 +392,13 @@
   </div>
   <div class="marquee-wrap reveal">
     <div class="marquee-track">
-      <div class="artist-card"><div class="thumb">🎸</div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">MUSIC ARTIST</div></div></div>
+      <div class="artist-card"><div class="thumb"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"></div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">MUSIC ARTIST</div></div></div>
       <div class="artist-card"><div class="thumb">🎤</div><div class="meta"><div class="name">BUCCI from ET-KING</div><div class="tag">MUSIC ARTIST</div></div></div>
-      <div class="artist-card"><div class="thumb">🕺</div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">MUSIC ARTIST</div></div></div>
+      <div class="artist-card"><div class="thumb"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"></div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">MUSIC ARTIST</div></div></div>
       <!-- 同じ内容を複製してループを継ぎ目なく見せています -->
-      <div class="artist-card" aria-hidden="true"><div class="thumb">🎸</div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">MUSIC ARTIST</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"></div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">MUSIC ARTIST</div></div></div>
       <div class="artist-card" aria-hidden="true"><div class="thumb">🎤</div><div class="meta"><div class="name">BUCCI from ET-KING</div><div class="tag">MUSIC ARTIST</div></div></div>
-      <div class="artist-card" aria-hidden="true"><div class="thumb">🕺</div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">MUSIC ARTIST</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"></div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">MUSIC ARTIST</div></div></div>
     </div>
   </div>
   <div id="comedian" class="wrap lineup-divider">
@@ -410,28 +414,28 @@
 </section>
 
 <section id="foodtruck" class="band">
-  <div class="wrap">
+  <div class="wrap wrap-wide">
     <span class="eyebrow reveal">FOOD TRUCK</span>
     <h2 class="reveal">キッチンカー</h2>
     <p class="lead reveal">会場には個性豊かなキッチンカーが集結。演目の合間には食べ歩きも楽しめます。</p>
     <div class="ticket-cards">
       <div class="ticket-card reveal">
-        <img class="foodtruck-icon" src="images/icons/icon-foodtruck.png" alt="">
+        <div class="truck-photo"><img src="images/foodtrucks/unko-castella.jpg" alt="うんこカステラ" loading="lazy"></div>
         <div class="who">うんこカステラ</div>
         <div class="day">カステラ</div>
       </div>
       <div class="ticket-card reveal" style="transition-delay:.05s;">
-        <img class="foodtruck-icon" src="images/icons/icon-foodtruck.png" alt="">
+        <div class="truck-photo"><img src="images/foodtrucks/potto-fujin.jpg" alt="ポット婦人" loading="lazy"></div>
         <div class="who">ポット婦人</div>
         <div class="day">クレープ・かき氷</div>
       </div>
       <div class="ticket-card reveal" style="transition-delay:.1s;">
-        <img class="foodtruck-icon" src="images/icons/icon-foodtruck.png" alt="">
+        <div class="truck-photo"><img src="images/foodtrucks/manpuku-stand.jpg" alt="まんぷくSTAND" loading="lazy"></div>
         <div class="who">まんぷくSTAND</div>
         <div class="day">チャーシュー丼</div>
       </div>
       <div class="ticket-card reveal">
-        <img class="foodtruck-icon" src="images/icons/icon-foodtruck.png" alt="">
+        <div class="truck-photo"><img src="images/foodtrucks/acaibowl2.jpg" alt="ACAIBOWL2.0" loading="lazy"></div>
         <div class="who">ACAIBOWL2.0</div>
         <div class="day">アサイーボウル</div>
       </div>
@@ -440,8 +444,20 @@
         <div class="who">new world</div>
         <div class="day">ステーキ・焼きそば</div>
       </div>
+      <div class="ticket-card reveal" style="transition-delay:.1s;">
+        <div class="truck-photo"><img src="images/foodtrucks/pizza-clash.jpg" alt="PIZZA CLASH" loading="lazy"></div>
+        <div class="who">PIZZA CLASH</div>
+        <div class="day">窯焼きピッツァ</div>
+      </div>
     </div>
-    <p class="note">当日はオリジナルグッズの物販ブースも出店予定です。</p>
+  </div>
+</section>
+
+<section id="goods" class="band">
+  <div class="wrap">
+    <span class="eyebrow reveal">GOODS</span>
+    <h2 class="reveal">オリジナルグッズ</h2>
+    <p class="lead reveal">COMING SOON</p>
   </div>
 </section>
 
