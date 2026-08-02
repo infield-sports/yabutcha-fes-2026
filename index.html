@@ -154,6 +154,12 @@
   h2{font-size:clamp(22px,3vw,30px); font-weight:900; margin-top:8px;}
   .lead{margin-top:22px; font-size:15px; color:var(--ink-soft);}
 
+  /* SPONSOR */
+  .credit-row{margin-top:36px; padding-top:28px; border-top:1px dashed var(--line); text-align:center;}
+  .credit-row:first-of-type{margin-top:28px; padding-top:0; border-top:none;}
+  .credit-label{font-size:12px; font-weight:900; letter-spacing:.14em; color:var(--terracotta);}
+  .credit-names{margin-top:10px; font-size:15px; font-weight:700; color:var(--ink);}
+
   .info-grid{
     margin-top:36px; display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
   }
@@ -589,7 +595,19 @@
   <div class="wrap">
     <span class="eyebrow reveal">SPONSOR</span>
     <h2 class="reveal">協賛</h2>
-    <p class="lead reveal">COMING SOON</p>
+
+    <div class="credit-row reveal">
+      <div class="credit-label">主催</div>
+      <div class="credit-names">島ヶ原温泉やぶっちゃ</div>
+    </div>
+    <div class="credit-row reveal">
+      <div class="credit-label">協賛</div>
+      <div class="credit-names">COMING SOON</div>
+    </div>
+    <div class="credit-row reveal">
+      <div class="credit-label">特別協力</div>
+      <div class="credit-names">MIE SHINOBI GATHERS</div>
+    </div>
   </div>
 </section>
 
