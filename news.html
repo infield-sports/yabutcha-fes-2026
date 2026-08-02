@@ -6,6 +6,8 @@
 <title>お知らせ | IGA LAUGH & MUSIC FES 2026 やぶっちゃと愉快な仲間たち</title>
 <meta name="description" content="IGA LAUGH & MUSIC FES 2026 やぶっちゃと愉快な仲間たち からのお知らせ一覧。">
 <meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Yomogi&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -19,22 +21,73 @@
     --line:rgba(42,36,28,0.14);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
   body{font-family:'Zen Maru Gothic', sans-serif; background:var(--cream); color:var(--ink); line-height:1.8;}
   a{color:inherit;}
   img{display:block; width:100%; height:auto;}
-  .wrap{max-width:760px; margin:0 auto; padding:0 6vw;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 6vw;}
 
   header{
+    position:sticky; top:0; z-index:50;
     display:flex; align-items:center; justify-content:space-between;
-    padding:16px 6vw; background:rgba(251,248,241,0.9);
+    padding:16px 6vw;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
   }
   header .header-logo{height:32px; width:auto;}
-  header .back{font-size:12.5px; font-weight:700;}
+  header .btn{padding:10px 20px; font-size:12.5px;}
+  .header-nav{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;}
+  .header-nav .btn{white-space:nowrap;}
+  @media (max-width:480px){
+    .header-nav{gap:8px;}
+    .header-nav .btn{padding:7px 14px; font-size:11px;}
+  }
 
-  main{padding:8vh 0;}
+  .btn{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:14px 30px; border-radius:999px; font-weight:900; font-size:13.5px;
+    text-decoration:none; border:2px solid transparent;
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .btn-fill{background:var(--terracotta); color:#fff;}
+  .btn-soft{background:transparent; color:var(--ink); border-color:transparent; border-radius:8px; font-weight:700;}
+  .btn-soft:hover{background:var(--forest); color:#fff;}
+
+  /* NAV TOGGLE (mobile hamburger) */
+  .nav-toggle{
+    display:none; position:relative; z-index:61; width:40px; height:40px; flex-shrink:0;
+    border:none; background:none; cursor:pointer; padding:0;
+    flex-direction:column; align-items:center; justify-content:center; gap:5px;
+  }
+  .nav-toggle span{width:22px; height:2px; background:var(--ink); border-radius:2px; transition:transform .25s ease, opacity .25s ease;}
+  .nav-toggle.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.is-active span:nth-child(2){opacity:0;}
+  .nav-toggle.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .nav-scrim{display:none; position:fixed; inset:0; background:rgba(20,20,15,0.4); z-index:55;}
+  .nav-scrim.is-open{display:block;}
+
+  @media (max-width:700px){
+    .nav-toggle{display:flex;}
+    .header-nav{
+      position:fixed; top:0; right:0; z-index:60;
+      height:100vh; width:min(78vw,320px);
+      background:#fff; flex-wrap:nowrap;
+      flex-direction:column; align-items:stretch; justify-content:flex-start;
+      padding:96px 24px 24px; gap:6px;
+      box-shadow:-10px 0 32px rgba(42,36,28,0.2);
+      transform:translateX(100%); transition:transform .3s ease;
+    }
+    .header-nav.is-open{transform:translateX(0);}
+    .header-nav .btn{width:100%; justify-content:flex-start; padding:12px 16px; font-size:13.5px;}
+    .header-nav .btn-fill{margin-top:10px; justify-content:center;}
+  }
+
+  main{padding:9vh 0;}
+  .back-link{display:block; margin-bottom:28px; font-size:12.5px; font-weight:700; color:var(--ink-soft);}
   .eyebrow{font-size:12px; font-weight:700; letter-spacing:.12em; color:var(--terracotta);}
-  h1{font-size:clamp(22px,3vw,28px); font-weight:900; margin-top:8px;}
+  h1{font-size:clamp(22px,3vw,30px); font-weight:900; margin-top:8px;}
 
   article{
     margin-top:40px; padding-top:32px; border-top:1px solid var(--line);
@@ -44,18 +97,41 @@
   article h2{font-size:16.5px; font-weight:900; margin-top:8px; line-height:1.6;}
   article p{margin-top:14px; font-size:14px; color:var(--ink-soft);}
 
+  .footer-title{font-weight:900; font-size:13px; letter-spacing:.04em; margin-bottom:16px;}
   footer{background:var(--ink); color:var(--cream); padding:6vh 6vw; text-align:center; font-size:12px;}
-  footer a{text-decoration:underline;}
+  .footer-yabutcha-logo{
+    width:20%; min-width:140px; max-width:240px; margin:0 auto 22px;
+    background:#fff; padding:16px; border-radius:16px;
+    box-shadow:0 12px 28px rgba(0,0,0,0.35);
+  }
+  .footer-yabutcha-logo a{display:block;}
+  .footer-yabutcha-logo img{width:100%; height:auto; object-fit:contain; transition:opacity .2s;}
+  .footer-yabutcha-logo a:hover img{opacity:.8;}
+  footer .col{opacity:.8; line-height:2;}
+  footer .col a{text-decoration:underline;}
 </style>
 </head>
 <body>
 
 <header>
   <a href="index.html"><img class="header-logo" src="images/logo-06-transparent.png" alt="IGA LAUGH & MUSIC FES 2026"></a>
-  <a class="back" href="index.html">&larr; トップへ戻る</a>
+  <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="header-nav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="header-nav" id="header-nav">
+    <a class="btn btn-soft" href="index.html#news">お知らせ</a>
+    <a class="btn btn-soft" href="index.html#artists">Artists</a>
+    <a class="btn btn-soft" href="index.html#comedian">Comedian</a>
+    <a class="btn btn-soft" href="index.html#workshop">Workshop</a>
+    <a class="btn btn-soft" href="index.html#foodtruck">Kitchencar</a>
+    <a class="btn btn-soft" href="index.html#access">アクセス</a>
+    <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="index.html#ticket">チケット</a>
+  </nav>
+  <div class="nav-scrim"></div>
 </header>
 
 <main class="wrap">
+  <a class="back-link" href="index.html">&larr; トップへ戻る</a>
   <span class="eyebrow">NEWS</span>
   <h1>お知らせ</h1>
 
@@ -67,8 +143,55 @@
 </main>
 
 <footer>
-  <a href="index.html">IGA LAUGH &amp; MUSIC FES 2026 トップページへ戻る</a>
+  <div class="footer-title">IGA LAUGH &amp; MUSIC FES 2026</div>
+  <div class="footer-yabutcha-logo">
+    <a href="https://www.yabutcha.com/" target="_blank" rel="noopener">
+      <img src="images/yabutcha-logo-transparent.png" alt="島ヶ原温泉やぶっちゃ">
+    </a>
+  </div>
+  <div class="col">
+    主催:(株)島ヶ原リゾート「島ヶ原温泉やぶっちゃ」<br>
+    企画・運営:M's Commit.LLC<br>
+    ※本ページは制作中です。内容は予告なく変更になる場合があります。<br>
+    <a href="index.html">トップページへ戻る</a>
+  </div>
 </footer>
+
+<script>
+(function () {
+  // スマホ用ハンバーガーメニューの開閉
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.header-nav');
+  var scrim = document.querySelector('.nav-scrim');
+  if (!toggle || !nav) return;
+
+  function closeNav() {
+    nav.classList.remove('is-open');
+    toggle.classList.remove('is-active');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (scrim) scrim.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  function openNav() {
+    nav.classList.add('is-open');
+    toggle.classList.add('is-active');
+    toggle.setAttribute('aria-expanded', 'true');
+    if (scrim) scrim.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  toggle.addEventListener('click', function () {
+    if (nav.classList.contains('is-open')) closeNav(); else openNav();
+  });
+  if (scrim) scrim.addEventListener('click', closeNav);
+  nav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeNav);
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 700) closeNav();
+  });
+})();
+</script>
 
 </body>
 </html>
