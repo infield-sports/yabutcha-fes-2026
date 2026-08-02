@@ -142,10 +142,6 @@
   .btn-fill{background:var(--terracotta); color:#fff;}
   .btn-outline{background:transparent; color:#fff; border-color:rgba(255,255,255,0.8);}
   .btn-soft{background:transparent; color:var(--ink); border-color:transparent; border-radius:8px; font-weight:700;}
-  .btn-disabled{
-    background:var(--cream); color:var(--ink-soft); border-color:var(--line);
-    cursor:not-allowed; opacity:.8;
-  }
   .btn-soft:hover{background:var(--forest); color:#fff;}
 
   /* SECTIONS */
@@ -203,6 +199,11 @@
   .ticket-card .price{margin-top:12px; font-family:'Yomogi',cursive; font-size:28px; color:var(--terracotta);}
   .ticket-card .price small{display:block; font-size:12px; font-family:'Zen Maru Gothic',sans-serif; color:var(--ink-soft); margin-top:2px;}
   .ticket-card .day{margin-top:8px; font-size:11.5px; color:var(--ink-soft);}
+  .card-buy-btn{
+    display:block; margin-top:16px; padding:10px; border-radius:999px;
+    background:#fff; border:1px solid var(--line); color:var(--ink-soft);
+    font-size:12px; font-weight:900; text-align:center; cursor:not-allowed;
+  }
   .note{margin-top:28px; font-size:12.5px; color:var(--ink-soft); line-height:2;}
   .ticket-perk{
     margin-top:18px; display:inline-flex; align-items:center; gap:8px;
@@ -241,7 +242,7 @@
     display:flex; gap:14px; width:max-content;
     animation:marquee-left 26s linear infinite;
   }
-  .marquee-track.reverse{animation-name:marquee-right; animation-duration:8s;}
+  .marquee-track.reverse{animation-name:marquee-right;}
   .marquee-track:hover{animation-play-state:paused;}
   @keyframes marquee-left{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
   @keyframes marquee-right{ from{transform:translateX(-50%);} to{transform:translateX(0);} }
@@ -264,6 +265,11 @@
   .artist-card .meta{padding:16px 14px; text-align:center;}
   .artist-card .name{font-weight:900; font-size:15px;}
   .artist-card .tag{font-size:11px; color:var(--ink-soft); margin-top:4px; letter-spacing:.05em;}
+
+  .mc-credit{margin-top:24px; display:inline-flex; align-items:center; gap:10px;}
+  .mc-photo{width:40px; height:40px; border-radius:50%; object-fit:cover; flex-shrink:0;}
+  .mc-label{font-size:11px; font-weight:900; color:var(--terracotta); letter-spacing:.08em;}
+  .mc-name{font-size:14px; font-weight:700;}
 
   /* scroll reveal */
   .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
@@ -378,7 +384,7 @@
 <section id="about">
   <div class="wrap">
     <span class="eyebrow reveal">ABOUT</span>
-    <h2 class="reveal">伊賀の大自然の中で、音楽とお笑いが重なりあう一日</h2>
+    <h2 class="reveal">伊賀の大自然で、音楽とお笑いが重なりあう一日</h2>
     <p class="lead">やぶっちゃ初、そしておそらく伊賀市初となる野外音楽×お笑いフェスティバル。温泉施設に併設された芝生広場を会場に、音楽ライブとお笑いライブが入れ替わりで展開されます。大人気キッチンカーによる美味しいグルメや大自然で遊べるワークショップも並び、演目の合間には温泉の湯気が漂う、やぶっちゃならではの一日を目指しています。</p>
     <div class="info-grid">
       <div class="cell reveal"><img class="icon" src="images/icons/icon-owarai.png" alt="お笑いライブ"><div class="v">お笑いライブ</div></div>
@@ -398,27 +404,38 @@
     <h2 class="reveal">出演者</h2>
     <p class="lead reveal">豪華アーティスト・芸人陣の出演が決定！さらなる発表にもご期待ください。</p>
 
-    <div id="artists" class="lineup-sub reveal"><img class="lineup-icon" src="images/icons/icon-music.png" alt="">MUSIC ARTIST</div>
+    <div id="artists" class="lineup-sub reveal"><img class="lineup-icon" src="images/icons/icon-music.png" alt="">アーティスト</div>
   </div>
   <div class="marquee-wrap reveal">
     <div class="marquee-track">
-      <div class="artist-card"><div class="thumb"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"></div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">MUSIC ARTIST</div></div></div>
+      <div class="artist-card"><div class="thumb"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"></div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">ARTIST</div></div></div>
       <div class="artist-card"><div class="thumb">🎤</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
-      <div class="artist-card"><div class="thumb"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"></div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">MUSIC ARTIST</div></div></div>
+      <div class="artist-card"><div class="thumb"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"></div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">ARTIST</div></div></div>
       <!-- 同じ内容を複製してループを継ぎ目なく見せています -->
-      <div class="artist-card" aria-hidden="true"><div class="thumb"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"></div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">MUSIC ARTIST</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"></div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">ARTIST</div></div></div>
       <div class="artist-card" aria-hidden="true"><div class="thumb">🎤</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
-      <div class="artist-card" aria-hidden="true"><div class="thumb"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"></div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">MUSIC ARTIST</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"></div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">ARTIST</div></div></div>
     </div>
   </div>
   <div id="comedian" class="wrap lineup-divider">
-    <div class="lineup-sub reveal"><img class="lineup-icon" src="images/icons/icon-owarai.png" alt="">COMEDIAN</div>
+    <div class="lineup-sub reveal"><img class="lineup-icon" src="images/icons/icon-owarai.png" alt="">お笑い芸人</div>
   </div>
   <div class="marquee-wrap reveal">
     <div class="marquee-track reverse">
       <div class="artist-card"><div class="thumb">🎭</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card"><div class="thumb">🎭</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card"><div class="thumb">🎭</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
       <!-- 同じ内容を複製してループを継ぎ目なく見せています -->
       <div class="artist-card" aria-hidden="true"><div class="thumb">🎭</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb">🎭</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb">🎭</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="mc-credit reveal">
+      <img class="mc-photo" src="images/mc/nasu-ayumi.jpg" alt="那須歩美" loading="lazy">
+      <span class="mc-label">司会</span>
+      <span class="mc-name">那須歩美</span>
     </div>
   </div>
 </section>
@@ -427,7 +444,7 @@
   <div class="wrap wrap-wide">
     <span class="eyebrow reveal">FOOD TRUCK</span>
     <h2 class="reveal">キッチンカー</h2>
-    <p class="lead reveal">会場には個性豊かなキッチンカーが集結。演目の合間には食べ歩きも楽しめます。</p>
+    <p class="lead reveal">会場には個性豊かなキッチンカーが集結。歌って、笑って、グルメを食べ尽くそう！</p>
     <div class="ticket-cards">
       <div class="ticket-card reveal">
         <div class="truck-photo"><img src="images/foodtrucks/unko-castella.jpg" alt="うんこカステラ" loading="lazy"></div>
@@ -450,14 +467,14 @@
         <div class="day">アサイーボウル</div>
       </div>
       <div class="ticket-card reveal" style="transition-delay:.05s;">
-        <img class="foodtruck-icon" src="images/icons/icon-foodtruck.png" alt="">
-        <div class="who">近日発表</div>
-        <div class="day">COMING SOON</div>
-      </div>
-      <div class="ticket-card reveal" style="transition-delay:.1s;">
         <div class="truck-photo"><img src="images/foodtrucks/pizza-clash.jpg" alt="PIZZA CLASH" loading="lazy"></div>
         <div class="who">PIZZA CLASH</div>
         <div class="day">窯焼きピッツァ</div>
+      </div>
+      <div class="ticket-card reveal" style="transition-delay:.1s;">
+        <img class="foodtruck-icon" src="images/icons/icon-foodtruck.png" alt="">
+        <div class="who">近日発表</div>
+        <div class="day">COMING SOON</div>
       </div>
     </div>
   </div>
@@ -467,11 +484,11 @@
   <div class="wrap">
     <span class="eyebrow reveal">WORKSHOP</span>
     <h2 class="reveal">ワークショップ</h2>
-    <p class="lead reveal">大人も子どもも楽しめる体験プログラムをご用意。芝生広場のあちこちで、遊びながら参加できるコンテンツを予定しています。</p>
+    <p class="lead reveal">大人も子どもも楽しめる体験型ワークショップで、伊賀の大自然を全力で楽しもう！</p>
     <div class="ticket-cards workshop-cards">
       <div class="ticket-card reveal">
         <div class="workshop-emoji">🥁</div>
-        <div class="who">リズム遊びワークショップ<span class="workshop-sub">元THE BLUE HEARTS 梶原徹也</span></div>
+        <div class="who">リズム遊び<span class="workshop-sub">元THE BLUE HEARTS 梶原徹也</span></div>
       </div>
       <div class="ticket-card reveal" style="transition-delay:.05s;">
         <div class="workshop-emoji">🐟</div>
@@ -509,16 +526,19 @@
         <div class="who">大人</div>
         <div class="price">¥5,000<small>前売</small></div>
         <div class="day">当日券 ¥5,500</div>
+        <span class="card-buy-btn" aria-disabled="true">購入する(準備中)</span>
       </div>
       <div class="ticket-card">
         <div class="who">子供(小学生〜中学生)</div>
         <div class="price">¥2,500<small>前売</small></div>
         <div class="day">当日券 ¥2,750</div>
+        <span class="card-buy-btn" aria-disabled="true">購入する(準備中)</span>
       </div>
       <div class="ticket-card">
         <div class="who">幼児(小学生以下)</div>
         <div class="price">無料<small>前売・当日とも</small></div>
         <div class="day">保護者同伴</div>
+        <span class="card-buy-btn" aria-disabled="true">購入する(準備中)</span>
       </div>
     </div>
 
@@ -529,22 +549,24 @@
           <div class="who">大人</div>
           <div class="price">¥3,000<small>前売</small></div>
           <div class="day">当日券 ¥3,000</div>
+          <span class="card-buy-btn" aria-disabled="true">購入する(準備中)</span>
         </div>
         <div class="ticket-card">
           <div class="who">子供(小学生〜中学生)</div>
           <div class="price">¥1,500<small>前売</small></div>
           <div class="day">当日券 ¥2,000</div>
+          <span class="card-buy-btn" aria-disabled="true">購入する(準備中)</span>
         </div>
         <div class="ticket-card">
           <div class="who">幼児(小学生以下)</div>
           <div class="price">無料<small>前売・当日とも</small></div>
           <div class="day">保護者同伴</div>
+          <span class="card-buy-btn" aria-disabled="true">購入する(準備中)</span>
         </div>
       </div>
     </div>
 
     <p class="note">前売券はやぶっちゃ店頭、およびPeatixでのオンラインチケットにて販売中です。<br>小雨決行。台風・荒天が予想される場合は前日中を目安に開催可否を公式SNSでご案内します。</p>
-    <span class="btn btn-disabled" aria-disabled="true" style="margin-top:18px;">🎫 オンラインチケット購入(準備中)</span>
   </div>
 </section>
 
