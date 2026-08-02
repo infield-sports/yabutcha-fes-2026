@@ -261,8 +261,11 @@
   .artist-card .meta{padding:16px 14px; text-align:center;}
   .artist-card .name{font-weight:900; font-size:15px;}
   .artist-card .tag{font-size:11px; color:var(--ink-soft); margin-top:4px; letter-spacing:.05em;}
-  .artist-card[data-name]{cursor:pointer;}
-  .artist-card[data-name]:focus-visible{outline:3px solid var(--terracotta); outline-offset:2px;}
+  .artist-card[data-name],
+  .ticket-card[data-name]{cursor:pointer; transition:transform .3s ease, box-shadow .3s ease;}
+  .ticket-card[data-name]:hover{transform:translateY(-6px); box-shadow:0 16px 32px rgba(42,36,28,0.16);}
+  .artist-card[data-name]:focus-visible,
+  .ticket-card[data-name]:focus-visible{outline:3px solid var(--terracotta); outline-offset:2px;}
 
   /* ARTIST INTRO MODAL */
   .artist-modal{
@@ -529,24 +532,24 @@
 </section>
 
 <section id="workshop" class="band">
-  <div class="wrap">
+  <div class="wrap wrap-wide">
     <span class="eyebrow reveal">WORKSHOP</span>
     <h2 class="reveal">ワークショップ</h2>
     <p class="lead reveal">大人も子どもも楽しめる体験型ワークショップで、伊賀の大自然を全力で楽しもう！</p>
     <div class="ticket-cards workshop-cards">
-      <div class="ticket-card reveal">
+      <div class="ticket-card reveal" tabindex="0" data-name="リズム遊び" data-tag="WORKSHOP" data-photo="images/workshop/rhythm-play.jpg" data-bio="元THE BLUE HEARTS・梶原徹也さんと一緒に、バケツや空き容器を叩いてリズムを楽しむワークショップ。小さなお子さまも気軽に参加できます。">
         <div class="truck-photo"><img src="images/workshop/rhythm-play.jpg" alt="リズム遊び" loading="lazy"></div>
         <div class="who">リズム遊び<span class="workshop-sub">元THE BLUE HEARTS 梶原徹也</span></div>
       </div>
-      <div class="ticket-card reveal" style="transition-delay:.05s;">
-        <div class="workshop-emoji">🐟</div>
+      <div class="ticket-card reveal" style="transition-delay:.05s;" tabindex="0" data-name="鮎つかみ取り" data-tag="WORKSHOP" data-photo="images/workshop/ayu-catching.jpg" data-bio="芝生広場わきの清流で、素手で鮎を追いかける昔ながらの川遊び。捕まえた鮎はその場で味わうこともできます(詳細は当日ご案内)。">
+        <div class="truck-photo"><img src="images/workshop/ayu-catching.jpg" alt="鮎つかみ取り" loading="lazy"></div>
         <div class="who">鮎つかみ取り</div>
       </div>
       <div class="ticket-card reveal" style="transition-delay:.1s;">
         <div class="workshop-emoji">🎣</div>
         <div class="who">フライフィッシング遊び</div>
       </div>
-      <div class="ticket-card reveal" style="transition-delay:.15s;">
+      <div class="ticket-card reveal" style="transition-delay:.15s;" tabindex="0" data-name="フリースロー" data-tag="WORKSHOP" data-photo="images/workshop/freethrow.jpg" data-bio="MIE SHINOBI GATHERSのメンバーと一緒に、3人制バスケコートでフリースローに挑戦。バスケ初心者のお子さまも大歓迎です。">
         <div class="truck-photo"><img src="images/workshop/freethrow.jpg" alt="フリースロー" loading="lazy"></div>
         <div class="who">フリースロー<span class="workshop-sub">MIE SHINOBI GATHERS</span></div>
       </div>
@@ -730,7 +733,7 @@
     if (lastFocused) lastFocused.focus();
   }
 
-  document.querySelectorAll('.artist-card[data-name]').forEach(function (card) {
+  document.querySelectorAll('.artist-card[data-name], .ticket-card[data-name]').forEach(function (card) {
     card.addEventListener('click', function () { openModal(card); });
     card.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') {
