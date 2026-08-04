@@ -36,6 +36,9 @@
     border-bottom:1px solid var(--line);
   }
   header .header-logo{height:32px; width:auto;}
+  .header-right{display:flex; align-items:center; gap:14px;}
+  .ig-link{display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; color:var(--ink); flex-shrink:0;}
+  .ig-link:hover{color:var(--terracotta);}
   header .btn{padding:10px 20px; font-size:12.5px;}
   .header-nav{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;}
   .header-nav .btn{white-space:nowrap;}
@@ -115,18 +118,27 @@
 
 <header>
   <a href="index.html"><img class="header-logo" src="images/logo-06-transparent.png" alt="IGA LAUGH & MUSIC FES 2026"></a>
-  <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="header-nav">
-    <span></span><span></span><span></span>
-  </button>
-  <nav class="header-nav" id="header-nav">
-    <a class="btn btn-soft" href="index.html#news">お知らせ</a>
-    <a class="btn btn-soft" href="index.html#artists">アーティスト</a>
-    <a class="btn btn-soft" href="index.html#comedian">お笑い芸人</a>
-    <a class="btn btn-soft" href="index.html#workshop">ワークショップ</a>
-    <a class="btn btn-soft" href="index.html#foodtruck">キッチンカー</a>
-    <a class="btn btn-soft" href="index.html#access">アクセス</a>
-    <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="index.html#ticket">チケット</a>
-  </nav>
+  <div class="header-right">
+    <a class="ig-link" href="https://www.instagram.com/yabutcha_onsen_camp/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5.5"/>
+        <circle cx="12" cy="12" r="4.3"/>
+        <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="header-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="header-nav" id="header-nav">
+      <a class="btn btn-soft" href="index.html#news">お知らせ</a>
+      <a class="btn btn-soft" href="index.html#artists">アーティスト</a>
+      <a class="btn btn-soft" href="index.html#comedian">お笑い芸人</a>
+      <a class="btn btn-soft" href="index.html#workshop">ワークショップ</a>
+      <a class="btn btn-soft" href="index.html#foodtruck">キッチンカー</a>
+      <a class="btn btn-soft" href="index.html#access">アクセス</a>
+      <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="index.html#ticket">チケット</a>
+    </nav>
+  </div>
   <div class="nav-scrim"></div>
 </header>
 

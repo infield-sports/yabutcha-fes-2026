@@ -39,6 +39,9 @@
   }
   .logo-mark{font-weight:900; font-size:14px; letter-spacing:.02em;}
   .logo-mark .hand{font-size:18px; color:var(--forest); margin-right:6px;}
+  .header-right{display:flex; align-items:center; gap:14px;}
+  .ig-link{display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; color:var(--ink); flex-shrink:0;}
+  .ig-link:hover{color:var(--terracotta);}
   header .btn{padding:10px 20px; font-size:12.5px;}
   .header-nav{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;}
   .header-nav .btn{white-space:nowrap;}
@@ -143,6 +146,7 @@
   .btn-outline{background:transparent; color:#fff; border-color:rgba(255,255,255,0.8);}
   .btn-soft{background:transparent; color:var(--ink); border-color:transparent; border-radius:8px; font-weight:700;}
   .btn-soft:hover{background:var(--forest); color:#fff;}
+  .btn-square{border-radius:14px;}
 
   /* SECTIONS */
   section{padding:9vh 0;}
@@ -200,7 +204,10 @@
   .ticket-card .price{margin-top:12px; font-family:'Yomogi',cursive; font-size:28px; color:var(--terracotta);}
   .ticket-card .price small{display:block; font-size:12px; font-family:'Zen Maru Gothic',sans-serif; color:var(--ink-soft); margin-top:2px;}
   .ticket-card .day{margin-top:8px; font-size:11.5px; color:var(--ink-soft);}
-  .note{margin-top:28px; font-size:12.5px; color:var(--ink-soft); line-height:2;}
+  .ticket-notice{margin-top:40px; padding-top:28px; border-top:1px dashed var(--line);}
+  .ticket-notice h3{font-size:14px; font-weight:900;}
+  .ticket-notice ul{margin-top:12px; padding-left:1.2em; font-size:12.5px; color:var(--ink-soft); line-height:2;}
+  .ticket-notice li{margin-top:6px;}
   .ticket-perk{
     margin-top:18px; display:inline-flex; align-items:center; gap:8px;
     background:var(--cream); border:1px solid var(--line); border-radius:999px;
@@ -375,18 +382,27 @@
 
 <header>
   <a href="#top"><img class="header-logo" src="images/logo-06-transparent.png" alt="IGA LAUGH & MUSIC FES 2026"></a>
-  <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="header-nav">
-    <span></span><span></span><span></span>
-  </button>
-  <nav class="header-nav" id="header-nav">
-    <a class="btn btn-soft" href="#news">お知らせ</a>
-    <a class="btn btn-soft" href="#artists">アーティスト</a>
-    <a class="btn btn-soft" href="#comedian">お笑い芸人</a>
-    <a class="btn btn-soft" href="#workshop">ワークショップ</a>
-    <a class="btn btn-soft" href="#foodtruck">キッチンカー</a>
-    <a class="btn btn-soft" href="#access">アクセス</a>
-    <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="#ticket">チケット</a>
-  </nav>
+  <div class="header-right">
+    <a class="ig-link" href="https://www.instagram.com/yabutcha_onsen_camp/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5.5"/>
+        <circle cx="12" cy="12" r="4.3"/>
+        <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="header-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="header-nav" id="header-nav">
+      <a class="btn btn-soft" href="#news">お知らせ</a>
+      <a class="btn btn-soft" href="#artists">アーティスト</a>
+      <a class="btn btn-soft" href="#comedian">お笑い芸人</a>
+      <a class="btn btn-soft" href="#workshop">ワークショップ</a>
+      <a class="btn btn-soft" href="#foodtruck">キッチンカー</a>
+      <a class="btn btn-soft" href="#access">アクセス</a>
+      <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="#ticket">チケット</a>
+    </nav>
+  </div>
   <div class="nav-scrim"></div>
 </header>
 
@@ -409,7 +425,7 @@
   <p class="hero-tagline">〜笑って、歌って、自然と遊ぶ〜</p>
   <div class="eyebrow-lg">
     <div class="line-date"><span class="accent">2026.9.23 水・祝</span>　11:00–19:00</div>
-    <div class="line-venue">島ヶ原温泉やぶっちゃ　芝生広場・3人制バスケコート</div>
+    <div class="line-venue">島ヶ原温泉やぶっちゃ　芝生広場（バスケコート下）</div>
   </div>
 </div>
 
@@ -432,7 +448,7 @@
       <div class="cell reveal"><img class="icon" src="images/icons/icon-owarai.png" alt="お笑いライブ"><div class="v">お笑いライブ</div></div>
       <div class="cell reveal" style="transition-delay:.05s;"><img class="icon" src="images/icons/icon-music.png" alt="音楽ライブ"><div class="v">音楽ライブ</div></div>
       <div class="cell reveal" style="transition-delay:.1s;"><img class="icon" src="images/icons/icon-foodtruck.png" alt="キッチンカーグルメ"><div class="v">キッチンカー<br>グルメ</div></div>
-      <div class="cell reveal" style="transition-delay:.15s;"><img class="icon icon-photo" src="images/icons/icon-workshop.jpg" alt="ワークショップ"><div class="v">ワークショップ</div></div>
+      <div class="cell reveal" style="transition-delay:.15s;"><img class="icon" src="images/icons/icon-fishing.jpg" alt="ワークショップ"><div class="v">ワークショップ</div></div>
     </div>
     <div class="about-visual reveal">
       <img src="images/fes-illustration.png" alt="IGA LAUGH & MUSIC FES 2026 お笑い・音楽・キッチンカー・温泉・キャンプのイメージイラスト">
@@ -549,12 +565,12 @@
     <h2 class="reveal">ワークショップ</h2>
     <p class="lead reveal">大人も子どもも楽しめる体験型ワークショップで、伊賀の大自然を全力で楽しもう！</p>
     <div class="ticket-cards workshop-cards">
-      <div class="ticket-card reveal" tabindex="0" data-name="リズム遊び" data-tag="WORKSHOP" data-photo="images/workshop/rhythm-play.jpg" data-bio="元THE BLUE HEARTS・梶原徹也さんと一緒に、バケツや空き容器を叩いてリズムを楽しむワークショップ。小さなお子さまも気軽に参加できます。">
+      <div class="ticket-card reveal" tabindex="0" data-name="リズム遊び" data-tag="WORKSHOP" data-photo="images/workshop/rhythm-play.jpg" data-bio="元THE BLUE HEARTSのドラマーで、日本のみならずアメリカ・イタリア・アルゼンチンなど世界各地で演奏を続ける梶原徹也さん。和太鼓やダンスとのコラボ、大塚愛バンドでのNHK紅白歌合戦出場など、ジャンルを超えて活動する本物のグルーヴを、バケツや空き容器を叩くリズム遊びで体感できます。">
         <div class="truck-photo"><img src="images/workshop/rhythm-play.jpg" alt="リズム遊び" loading="lazy"></div>
         <div class="who">リズム遊び<span class="workshop-sub">元THE BLUE HEARTS 梶原徹也</span></div>
       </div>
       <div class="ticket-card reveal" style="transition-delay:.05s;" tabindex="0" data-name="鮎つかみ取り" data-tag="WORKSHOP" data-photo="images/workshop/ayu-catching.jpg" data-bio="芝生広場わきの清流で、素手で鮎を追いかける昔ながらの川遊び。捕まえた鮎はその場で味わうこともできます(詳細は当日ご案内)。">
-        <div class="truck-photo"><img src="images/workshop/ayu-catching.jpg" alt="鮎つかみ取り" loading="lazy"></div>
+        <div class="truck-photo" style="aspect-ratio:3/4;"><img src="images/workshop/ayu-catching.jpg" alt="鮎つかみ取り" loading="lazy"></div>
         <div class="who">鮎つかみ取り</div>
       </div>
       <div class="ticket-card reveal" style="transition-delay:.1s;" tabindex="0" data-name="フライフィッシング遊び" data-tag="WORKSHOP" data-photo="images/workshop/flyfishing.jpg" data-bio="川に浮かべたカラーコーンめがけてキャスティング。狙いを定めて釣り竿を振る、フライフィッシング気分を味わえる的当てゲームです。">
@@ -581,7 +597,7 @@
   <div class="wrap">
     <span class="eyebrow reveal">TICKET</span>
     <h2 class="reveal">チケット</h2>
-    <p class="ticket-perk reveal">♨️ どのチケットにも「島ヶ原温泉やぶっちゃ」無料入浴券が付いています</p>
+    <p class="lead reveal">前売券はやぶっちゃ店頭、およびPeatixでのオンラインチケットにて販売中です。<br>どのチケットにも「島ヶ原温泉やぶっちゃ」無料入浴券が付いています。</p>
 
     <div class="lineup-sub reveal" style="margin-top:28px;">VIP<span class="tier-desc">テント内・座席付</span></div>
     <div class="ticket-cards">
@@ -601,7 +617,7 @@
         <div class="day">保護者同伴</div>
       </div>
     </div>
-    <a class="btn btn-fill" style="margin-top:18px;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener">🎫 Peatixで購入する</a>
+    <a class="btn btn-fill btn-square" style="margin-top:18px;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener">🎫 Peatixで購入する</a>
 
     <div class="lineup-divider">
       <div class="lineup-sub reveal">一般<span class="tier-desc">スタンディング(座席なし)</span></div>
@@ -622,10 +638,18 @@
           <div class="day">保護者同伴</div>
         </div>
       </div>
-      <a class="btn btn-fill" style="margin-top:18px;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener">🎫 Peatixで購入する</a>
+      <a class="btn btn-fill btn-square" style="margin-top:18px;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener">🎫 Peatixで購入する</a>
     </div>
 
-    <p class="note">前売券はやぶっちゃ店頭、およびPeatixでのオンラインチケットにて販売中です。<br>小雨決行。台風・荒天が予想される場合は前日中を目安に開催可否を公式SNSでご案内します。</p>
+    <div class="ticket-notice reveal">
+      <h3>注意書き</h3>
+      <ul>
+        <li>♨️小雨決行。台風・荒天が予想される場合は前日中を目安に開催可否を公式SNSでご案内します。</li>
+        <li>♨️体調不良・発熱、その他いかなる理由でご来場いただけなかった場合も、ご購入いただいたチケットの払い戻しはいたしません。（主催者都合・天候等による公演中止は除く）</li>
+        <li>♨️ご購入のチケットはご本人のみが使用でき、第三者へのチケットの譲渡・販売は禁止です。</li>
+        <li>♨️チケットの不正転売及び譲渡は固く禁じます。チケットあるいはチケット購入権利を転売、あるいはオークション等に出品した場合、当該チケットを無効なものとみなします。転売により購入されたチケットのトラブルについては、一切の責任を負いません。</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -634,7 +658,7 @@
     <span class="eyebrow reveal">ACCESS</span>
     <h2 class="reveal">会場・アクセス</h2>
     <div class="access-list reveal">
-      <div class="row"><span class="k">会場名</span><span class="v">島ヶ原温泉やぶっちゃ<br>芝生広場・3人制バスケコート</span></div>
+      <div class="row"><span class="k">会場名</span><span class="v">島ヶ原温泉やぶっちゃ<br>芝生広場（バスケコート下）</span></div>
       <div class="row"><span class="k">所在地</span><span class="v">三重県伊賀市島ヶ原13680</span></div>
       <div class="row"><span class="k">駐車場</span><span class="v">無料駐車場あり</span></div>
     </div>
