@@ -852,9 +852,16 @@
 
   var i = 0;
   setInterval(function () {
-    slides[i].classList.remove('is-active');
+    var outgoing = slides[i];
+    // アニメーション(ズーム)が外れた瞬間に画角がスナップして戻らないよう、
+    // フェードアウトする間は現在のズーム量をそのまま固定する
+    outgoing.style.transform = getComputedStyle(outgoing).transform;
+    outgoing.classList.remove('is-active');
+
     i = (i + 1) % slides.length;
-    slides[i].classList.add('is-active');
+    var incoming = slides[i];
+    incoming.style.transform = '';
+    incoming.classList.add('is-active');
   }, 3000);
 })();
 
