@@ -89,10 +89,12 @@
   .hero-slideshow{position:absolute; inset:0; overflow:hidden;}
   .hero-slide{
     position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-    opacity:0; transition:opacity 1.6s ease;
+    opacity:0; transition:opacity 1s ease;
+    transform:scale(1.03);
   }
-  .hero-slide.is-active{opacity:1; z-index:1; animation:hero-kenburns 6.6s ease-out forwards;}
-  @keyframes hero-kenburns{ from{transform:scale(1);} to{transform:scale(1.08);} }
+  .hero-slide.is-active{opacity:1; z-index:1; animation:hero-kenburns 3.6s ease-out forwards;}
+  video.hero-slide{filter:saturate(1.35) contrast(1.08) brightness(1.03) sepia(.12);}
+  @keyframes hero-kenburns{ from{transform:scale(1.03);} to{transform:scale(1.1);} }
   @media (prefers-reduced-motion: reduce){
     .hero-slide.is-active{animation:none;}
   }
@@ -839,12 +841,16 @@
   // ヒーロー背景を動画+写真でクロスフェードしながら順番に切り替える
   var slides = document.querySelectorAll('.hero-slide');
   if (slides.length < 2) return;
+
+  var heroVideo = document.querySelector('video.hero-slide');
+  if (heroVideo) heroVideo.playbackRate = 0.5; // ドローン映像をスローモーションに
+
   var i = 0;
   setInterval(function () {
     slides[i].classList.remove('is-active');
     i = (i + 1) % slides.length;
     slides[i].classList.add('is-active');
-  }, 6000);
+  }, 3000);
 })();
 
 (function () {
