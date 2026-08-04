@@ -303,6 +303,7 @@
     .artist-modal-card{animation:none; transform:none; opacity:1;}
   }
 
+  .mc-row{display:flex; flex-wrap:wrap; gap:16px;}
   .mc-credit{
     margin-top:28px; display:inline-flex; align-items:center; gap:18px;
     background:#fff; border:1px solid var(--line); border-radius:18px;
@@ -455,6 +456,7 @@
       <div class="artist-card" tabindex="0" data-name="ウルトラソウル" data-tag="ARTIST" data-photo="images/artists/ultrasoul.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/ultrasoul.jpg" alt="ウルトラソウル" loading="lazy"></div><div class="meta"><div class="name">ウルトラソウル</div><div class="tag">ARTIST</div></div></div>
       <div class="artist-card" tabindex="0" data-name="世史久" data-tag="ARTIST" data-photo="images/artists/seshiku.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/seshiku.jpg" alt="世史久" loading="lazy"></div><div class="meta"><div class="name">世史久</div><div class="tag">ARTIST</div></div></div>
       <div class="artist-card" tabindex="0" data-name="わっしょいマン" data-tag="ARTIST" data-photo="images/artists/wasshoiman.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"></div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" tabindex="0" data-name="NOKO" data-tag="ARTIST" data-photo="images/artists/noko.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/noko.jpg" alt="NOKO" loading="lazy"></div><div class="meta"><div class="name">NOKO</div><div class="tag">ARTIST</div></div></div>
       <div class="artist-card"><div class="thumb">🎤</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
       <!-- 同じ内容を複製してループを継ぎ目なく見せています -->
       <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="デリカテッセン" data-tag="ARTIST" data-photo="images/artists/delicatessen.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"></div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">ARTIST</div></div></div>
@@ -463,6 +465,7 @@
       <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="ウルトラソウル" data-tag="ARTIST" data-photo="images/artists/ultrasoul.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/ultrasoul.jpg" alt="ウルトラソウル" loading="lazy"></div><div class="meta"><div class="name">ウルトラソウル</div><div class="tag">ARTIST</div></div></div>
       <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="世史久" data-tag="ARTIST" data-photo="images/artists/seshiku.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/seshiku.jpg" alt="世史久" loading="lazy"></div><div class="meta"><div class="name">世史久</div><div class="tag">ARTIST</div></div></div>
       <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="わっしょいマン" data-tag="ARTIST" data-photo="images/artists/wasshoiman.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"></div><div class="meta"><div class="name">わっしょいマン</div><div class="tag">ARTIST</div></div></div>
+      <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="NOKO" data-tag="ARTIST" data-photo="images/artists/noko.jpg" data-bio="プロフィール情報は近日公開予定です。ライブで会えるのをお楽しみに！"><div class="thumb"><img src="images/artists/noko.jpg" alt="NOKO" loading="lazy"></div><div class="meta"><div class="name">NOKO</div><div class="tag">ARTIST</div></div></div>
       <div class="artist-card" aria-hidden="true"><div class="thumb">🎤</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
     </div>
   </div>
@@ -481,11 +484,20 @@
     </div>
   </div>
   <div class="wrap">
-    <div class="mc-credit reveal">
-      <img class="mc-photo" src="images/mc/nasu-ayumi.jpg" alt="那須歩美" loading="lazy">
-      <div>
-        <div class="mc-label">司会</div>
-        <div class="mc-name">那須歩美</div>
+    <div class="mc-row">
+      <div class="mc-credit reveal">
+        <img class="mc-photo" src="images/mc/nasu-ayumi.jpg" alt="那須歩美" loading="lazy">
+        <div>
+          <div class="mc-label">司会</div>
+          <div class="mc-name">那須歩美</div>
+        </div>
+      </div>
+      <div class="mc-credit reveal">
+        <img class="mc-photo" src="images/mc/izumi-satoshi.jpg" alt="泉聡" loading="lazy">
+        <div>
+          <div class="mc-label">司会</div>
+          <div class="mc-name">泉聡</div>
+        </div>
       </div>
     </div>
   </div>
@@ -570,7 +582,6 @@
     <span class="eyebrow reveal">TICKET</span>
     <h2 class="reveal">チケット</h2>
     <p class="ticket-perk reveal">♨️ どのチケットにも「島ヶ原温泉やぶっちゃ」無料入浴券が付いています</p>
-    <a class="btn btn-fill" style="margin-top:18px;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener">🎫 オンラインチケット</a>
 
     <div class="lineup-sub reveal" style="margin-top:28px;">VIP<span class="tier-desc">テント内・座席付</span></div>
     <div class="ticket-cards">
@@ -590,6 +601,7 @@
         <div class="day">保護者同伴</div>
       </div>
     </div>
+    <a class="btn btn-fill" style="margin-top:18px;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener">🎫 Peatixで購入する</a>
 
     <div class="lineup-divider">
       <div class="lineup-sub reveal">一般<span class="tier-desc">スタンディング(座席なし)</span></div>
@@ -610,10 +622,10 @@
           <div class="day">保護者同伴</div>
         </div>
       </div>
+      <a class="btn btn-fill" style="margin-top:18px;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener">🎫 Peatixで購入する</a>
     </div>
 
     <p class="note">前売券はやぶっちゃ店頭、およびPeatixでのオンラインチケットにて販売中です。<br>小雨決行。台風・荒天が予想される場合は前日中を目安に開催可否を公式SNSでご案内します。</p>
-    <a class="btn btn-fill" style="margin-top:18px;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener">🎫 オンラインチケット</a>
   </div>
 </section>
 
