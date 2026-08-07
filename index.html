@@ -22,7 +22,10 @@
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth; scroll-padding-top:84px;}
-  body{font-family:'Zen Maru Gothic', sans-serif; background:var(--cream); color:var(--ink); line-height:1.8;}
+  body{
+    font-family:'Zen Maru Gothic', sans-serif; color:var(--ink); line-height:1.8;
+    background:var(--cream) url('images/bg-scatter-tile.png') repeat;
+  }
   .hand{font-family:'Yomogi', cursive;}
   a{color:inherit;}
   img{display:block; width:100%; height:100%; object-fit:cover;}
@@ -207,7 +210,10 @@
   .about-visual img{width:100%; height:auto; display:block; object-fit:contain;}
 
   /* TICKET */
-  .band{background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .band{
+    background:#fff url('images/bg-scatter-tile.png') repeat;
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
   .ticket-cards{margin-top:36px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
   @media (max-width:700px){ .ticket-cards{grid-template-columns:1fr;} }
   .ticket-card{
@@ -215,6 +221,12 @@
     padding:24px 20px; text-align:center; overflow:hidden;
   }
   .truck-photo{margin:-24px -20px 16px; aspect-ratio:4/3; background:var(--line);}
+  .and-more-visual{
+    margin:-24px -20px 16px; aspect-ratio:4/3;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--cream); border-bottom:2px dashed var(--line);
+    font-family:'Yomogi', cursive; font-size:26px; color:var(--terracotta);
+  }
   .truck-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .ticket-card .who{font-weight:900; font-size:14.5px;}
   .ticket-card .price{margin-top:12px; font-family:'Yomogi',cursive; font-size:28px; color:var(--terracotta);}
@@ -416,7 +428,7 @@
       <a class="btn btn-soft" href="#workshop">ワークショップ</a>
       <a class="btn btn-soft" href="#foodtruck">キッチンカー</a>
       <a class="btn btn-soft" href="#access">アクセス</a>
-      <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="#ticket">チケット</a>
+      <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener">チケット</a>
     </nav>
   </div>
   <div class="nav-scrim"></div>
@@ -469,7 +481,7 @@
       <div class="cell reveal"><img class="icon" src="images/icons/icon-owarai.png" alt="お笑いライブ"><div class="v">お笑いライブ</div></div>
       <div class="cell reveal" style="transition-delay:.05s;"><img class="icon" src="images/icons/icon-music.png" alt="音楽ライブ"><div class="v">音楽ライブ</div></div>
       <div class="cell reveal" style="transition-delay:.1s;"><img class="icon" src="images/icons/icon-foodtruck.png" alt="キッチンカーグルメ"><div class="v">キッチンカー<br>グルメ</div></div>
-      <div class="cell reveal" style="transition-delay:.15s;"><img class="icon" src="images/icons/icon-fishing.jpg" alt="ワークショップ"><div class="v">ワークショップ</div></div>
+      <div class="cell reveal" style="transition-delay:.15s;"><img class="icon" src="images/icons/icon-fishing.png" alt="ワークショップ"><div class="v">ワークショップ</div></div>
     </div>
     <div class="about-visual reveal">
       <img src="images/fes-illustration.png" alt="IGA LAUGH & MUSIC FES 2026 お笑い・音楽・キッチンカー・温泉・キャンプのイメージイラスト">
@@ -572,9 +584,8 @@
         <div class="day">窯焼きピッツァ</div>
       </div>
       <div class="ticket-card reveal" style="transition-delay:.1s;">
-        <img class="foodtruck-icon" src="images/icons/icon-foodtruck.png" alt="">
-        <div class="who">近日発表</div>
-        <div class="day">COMING SOON</div>
+        <div class="and-more-visual">and more...</div>
+        <div class="who">他にも続々出店予定</div>
       </div>
     </div>
   </div>
@@ -591,7 +602,7 @@
         <div class="who">リズム遊び<span class="workshop-sub">元THE BLUE HEARTS 梶原徹也</span></div>
       </div>
       <div class="ticket-card reveal" style="transition-delay:.05s;" tabindex="0" data-name="鮎つかみ取り" data-tag="WORKSHOP" data-photo="images/workshop/ayu-catching.jpg" data-bio="芝生広場わきの清流で、素手で鮎を追いかける昔ながらの川遊び。捕まえた鮎はその場で味わうこともできます(詳細は当日ご案内)。">
-        <div class="truck-photo" style="aspect-ratio:3/4;"><img src="images/workshop/ayu-catching.jpg" alt="鮎つかみ取り" loading="lazy"></div>
+        <div class="truck-photo"><img src="images/workshop/ayu-catching.jpg" alt="鮎つかみ取り" loading="lazy"></div>
         <div class="who">鮎つかみ取り</div>
       </div>
       <div class="ticket-card reveal" style="transition-delay:.1s;" tabindex="0" data-name="フライフィッシング遊び" data-tag="WORKSHOP" data-photo="images/workshop/flyfishing.jpg" data-bio="川に浮かべたカラーコーンめがけてキャスティング。狙いを定めて釣り竿を振る、フライフィッシング気分を味わえる的当てゲームです。">
@@ -755,11 +766,7 @@
       <img src="images/yabutcha-logo-transparent.png" alt="島ヶ原温泉やぶっちゃ">
     </a>
   </div>
-  <div class="col">
-    主催:(株)島ヶ原リゾート「島ヶ原温泉やぶっちゃ」<br>
-    企画・運営:M's Commit.LLC<br>
-    ※本ページは制作中です。内容は予告なく変更になる場合があります。
-  </div>
+  <div class="col">島ヶ原温泉やぶっちゃ</div>
 </footer>
 
 <script>
