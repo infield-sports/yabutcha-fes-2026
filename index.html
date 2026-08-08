@@ -355,6 +355,9 @@
   }
 
   .mc-row{display:flex; flex-wrap:wrap; gap:16px;}
+  .performance-mc-row{display:flex; gap:32px; align-items:flex-start;}
+  .performance-col, .mc-col{flex:1; min-width:0;}
+  @media (max-width:700px){ .performance-mc-row{flex-direction:column; gap:28px;} }
   .performance-solo{display:flex; justify-content:center; margin-top:24px;}
   .performance-solo .artist-card{width:min(35vw, 200px);}
   .mc-credit{
@@ -552,28 +555,32 @@
     </div>
   </div>
   <div class="wrap lineup-divider">
-    <div class="lineup-sub reveal">パフォーマンス</div>
-    <div class="performance-solo">
-      <div class="artist-card">
-        <div class="thumb"><img src="images/artists/five.jpg" alt="FIVE" loading="lazy"></div>
-        <div class="meta"><div class="name">FIVE</div><div class="tag">PERFORMANCE</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="mc-row">
-      <div class="mc-credit reveal">
-        <img class="mc-photo" src="images/mc/nasu-ayumi.jpg" alt="那須歩美" loading="lazy">
-        <div>
-          <div class="mc-label">司会</div>
-          <div class="mc-name">那須歩美</div>
+    <div class="performance-mc-row">
+      <div class="performance-col">
+        <div class="lineup-sub reveal">パフォーマンス</div>
+        <div class="performance-solo">
+          <div class="artist-card">
+            <div class="thumb"><img src="images/artists/five.jpg" alt="FIVE" loading="lazy"></div>
+            <div class="meta"><div class="name">FIVE</div><div class="tag">PERFORMANCE</div></div>
+          </div>
         </div>
       </div>
-      <div class="mc-credit reveal">
-        <img class="mc-photo" src="images/mc/izumi-satoshi.jpg" alt="泉聡" loading="lazy">
-        <div>
-          <div class="mc-label">司会</div>
-          <div class="mc-name">泉聡</div>
+      <div class="mc-col">
+        <div class="mc-row">
+          <div class="mc-credit reveal">
+            <img class="mc-photo" src="images/mc/nasu-ayumi.jpg" alt="那須歩美" loading="lazy">
+            <div>
+              <div class="mc-label">司会</div>
+              <div class="mc-name">那須歩美</div>
+            </div>
+          </div>
+          <div class="mc-credit reveal">
+            <img class="mc-photo" src="images/mc/izumi-satoshi.jpg" alt="泉聡" loading="lazy">
+            <div>
+              <div class="mc-label">司会</div>
+              <div class="mc-name">泉聡</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
