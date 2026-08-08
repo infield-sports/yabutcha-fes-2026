@@ -245,9 +245,25 @@
   .foodtruck-icon{width:44px; height:44px; object-fit:contain; margin:0 auto;}
 
   /* WORKSHOP */
-  .workshop-cards{grid-template-columns:repeat(4,1fr);}
-  @media (max-width:700px){ .workshop-cards{grid-template-columns:1fr 1fr;} }
-  @media (max-width:460px){ .workshop-cards{grid-template-columns:1fr;} }
+  .workshop-cards{grid-template-columns:repeat(3,1fr);}
+  @media (max-width:700px){ .workshop-cards{grid-template-columns:1fr;} }
+
+  .workshop-feature{
+    display:grid; grid-template-columns:1fr 1.1fr; gap:28px; align-items:center;
+    background:#fff; border:1px solid var(--line); border-radius:20px;
+    padding:20px; margin-bottom:28px; cursor:pointer;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .workshop-feature:hover{transform:translateY(-4px); box-shadow:0 16px 32px rgba(42,36,28,0.14);}
+  .workshop-feature:focus-visible{outline:3px solid var(--terracotta); outline-offset:2px;}
+  .workshop-feature-photo{aspect-ratio:4/3; border-radius:14px; overflow:hidden;}
+  .workshop-feature-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .workshop-feature-credit{font-size:11.5px; font-weight:900; color:var(--terracotta); letter-spacing:.06em;}
+  .workshop-feature-title{margin-top:6px; font-size:clamp(19px,2.4vw,23px); font-weight:900;}
+  .workshop-feature-desc{margin-top:10px; font-size:13px; color:var(--ink-soft); line-height:1.9;}
+  @media (max-width:700px){
+    .workshop-feature{grid-template-columns:1fr; padding:16px;}
+  }
   .workshop-emoji{
     width:56px; height:56px; margin:0 auto; border-radius:50%;
     background:var(--cream); display:flex; align-items:center; justify-content:center;
@@ -596,20 +612,24 @@
     <span class="eyebrow reveal">WORKSHOP</span>
     <h2 class="reveal">ワークショップ</h2>
     <p class="lead reveal">大人も子どもも楽しめる体験型ワークショップで、伊賀の大自然を全力で楽しもう！</p>
-    <div class="ticket-cards workshop-cards">
-      <div class="ticket-card reveal" tabindex="0" data-name="リズム遊び" data-tag="WORKSHOP" data-photo="images/workshop/rhythm-play.jpg" data-bio="元THE BLUE HEARTSのドラマーで、日本のみならずアメリカ・イタリア・アルゼンチンなど世界各地で演奏を続ける梶原徹也さん。和太鼓やダンスとのコラボ、大塚愛バンドでのNHK紅白歌合戦出場など、ジャンルを超えて活動する本物のグルーヴを、バケツや空き容器を叩くリズム遊びで体感できます。">
-        <div class="truck-photo"><img src="images/workshop/rhythm-play.jpg" alt="リズム遊び" loading="lazy"></div>
-        <div class="who">リズム遊び<span class="workshop-sub">元THE BLUE HEARTS 梶原徹也</span></div>
+    <div class="workshop-feature reveal" tabindex="0" data-name="リズム遊び" data-tag="WORKSHOP" data-photo="images/workshop/rhythm-play.jpg" data-bio="元THE BLUE HEARTSのドラマーで、日本のみならずアメリカ・イタリア・アルゼンチンなど世界各地で演奏を続ける梶原徹也さん。和太鼓やダンスとのコラボ、大塚愛バンドでのNHK紅白歌合戦出場など、ジャンルを超えて活動する本物のグルーヴを、バケツや空き容器を叩くリズム遊びで体感できます。">
+      <div class="workshop-feature-photo"><img src="images/workshop/rhythm-play.jpg" alt="リズム遊び" loading="lazy"></div>
+      <div class="workshop-feature-body">
+        <div class="workshop-feature-credit">元THE BLUE HEARTS 梶原徹也さんが登場</div>
+        <div class="workshop-feature-title">リズム遊び</div>
+        <p class="workshop-feature-desc">バケツや空き容器を叩いて、世界を舞台に活動する本物のグルーヴを体感。小さなお子さまも気軽に参加できます。</p>
       </div>
-      <div class="ticket-card reveal" style="transition-delay:.05s;" tabindex="0" data-name="鮎つかみ取り" data-tag="WORKSHOP" data-photo="images/workshop/ayu-catching.jpg" data-bio="芝生広場わきの清流で、素手で鮎を追いかける昔ながらの川遊び。捕まえた鮎はその場で味わうこともできます(詳細は当日ご案内)。">
+    </div>
+    <div class="ticket-cards workshop-cards">
+      <div class="ticket-card reveal" tabindex="0" data-name="鮎つかみ取り" data-tag="WORKSHOP" data-photo="images/workshop/ayu-catching.jpg" data-bio="芝生広場わきの清流で、素手で鮎を追いかける昔ながらの川遊び。捕まえた鮎はその場で味わうこともできます(詳細は当日ご案内)。">
         <div class="truck-photo"><img src="images/workshop/ayu-catching.jpg" alt="鮎つかみ取り" loading="lazy"></div>
         <div class="who">鮎つかみ取り</div>
       </div>
-      <div class="ticket-card reveal" style="transition-delay:.1s;" tabindex="0" data-name="フライフィッシング遊び" data-tag="WORKSHOP" data-photo="images/workshop/flyfishing.jpg" data-bio="川に浮かべたカラーコーンめがけてキャスティング。狙いを定めて釣り竿を振る、フライフィッシング気分を味わえる的当てゲームです。">
+      <div class="ticket-card reveal" style="transition-delay:.05s;" tabindex="0" data-name="フライフィッシング遊び" data-tag="WORKSHOP" data-photo="images/workshop/flyfishing.jpg" data-bio="川に浮かべたカラーコーンめがけてキャスティング。狙いを定めて釣り竿を振る、フライフィッシング気分を味わえる的当てゲームです。">
         <div class="truck-photo"><img src="images/workshop/flyfishing.jpg" alt="フライフィッシング遊び" loading="lazy"></div>
         <div class="who">フライフィッシング遊び</div>
       </div>
-      <div class="ticket-card reveal" style="transition-delay:.15s;" tabindex="0" data-name="フリースロー" data-tag="WORKSHOP" data-photo="images/workshop/freethrow.jpg" data-bio="MIE SHINOBI GATHERSのメンバーと一緒に、3人制バスケコートでフリースローに挑戦。バスケ初心者のお子さまも大歓迎です。">
+      <div class="ticket-card reveal" style="transition-delay:.1s;" tabindex="0" data-name="フリースロー" data-tag="WORKSHOP" data-photo="images/workshop/freethrow.jpg" data-bio="MIE SHINOBI GATHERSのメンバーと一緒に、3人制バスケコートでフリースローに挑戦。バスケ初心者のお子さまも大歓迎です。">
         <div class="truck-photo"><img src="images/workshop/freethrow.jpg" alt="フリースロー" loading="lazy"></div>
         <div class="who">フリースロー<span class="workshop-sub">MIE SHINOBI GATHERS</span></div>
       </div>
@@ -730,19 +750,23 @@
 
 <section id="sponsor" class="band">
   <div class="wrap">
-    <span class="eyebrow reveal">SPONSOR</span>
-    <h2 class="reveal">協賛</h2>
+    <span class="eyebrow reveal">CREDIT</span>
+    <h2 class="reveal">クレジット</h2>
 
     <div class="credit-row reveal">
       <div class="credit-label">主催</div>
       <div class="credit-names">島ヶ原温泉やぶっちゃ</div>
     </div>
     <div class="credit-row reveal">
+      <div class="credit-label">企画・制作</div>
+      <div class="credit-names">M's Commit.LLC</div>
+    </div>
+    <div class="credit-row reveal">
       <div class="credit-label">協賛</div>
       <div class="credit-names">COMING SOON</div>
     </div>
     <div class="credit-row reveal">
-      <div class="credit-label">特別協力</div>
+      <div class="credit-label">協力</div>
       <div class="credit-names">MIE SHINOBI GATHERS</div>
     </div>
   </div>
@@ -798,7 +822,7 @@
     if (lastFocused) lastFocused.focus();
   }
 
-  document.querySelectorAll('.artist-card[data-name], .ticket-card[data-name]').forEach(function (card) {
+  document.querySelectorAll('.artist-card[data-name], .ticket-card[data-name], .workshop-feature[data-name]').forEach(function (card) {
     card.addEventListener('click', function () { openModal(card); });
     card.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') {
