@@ -110,12 +110,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   article h2{font-size:18px; font-weight:900; margin-top:12px; line-height:1.7;}
   article p{margin-top:20px; font-size:14.5px; line-height:2.1; color:var(--ink-soft);}
 
-  .announce-sub{margin-top:32px; font-size:13px; font-weight:900; letter-spacing:.04em; color:var(--forest);}
-  .announce-grid{margin-top:16px; display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
-  @media (max-width:600px){ .announce-grid{grid-template-columns:repeat(3,1fr); gap:10px;} }
-  .announce-item{text-align:center;}
-  .announce-item img{aspect-ratio:1/1; border-radius:12px; object-fit:cover;}
-  .announce-name{margin-top:8px; font-size:12px; font-weight:700; line-height:1.4;}
+  .announce-artist-grid{margin-top:28px; display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  @media (max-width:600px){ .announce-artist-grid{grid-template-columns:1fr;} }
+  .announce-artist-card{
+    display:flex; gap:14px; background:#fff; border:1px solid var(--line);
+    border-radius:16px; padding:16px;
+  }
+  .announce-artist-card img{width:88px; height:88px; border-radius:12px; object-fit:cover; flex-shrink:0;}
+  .announce-artist-body{flex:1; min-width:0;}
+  .announce-artist-name{font-weight:900; font-size:14px; line-height:1.4;}
+  .announce-artist-tag{margin-top:2px; font-size:10.5px; font-weight:700; color:var(--terracotta); letter-spacing:.06em;}
+  .announce-artist-bio{margin-top:8px; font-size:12px; line-height:1.75; color:var(--ink-soft);}
 
   .footer-title{font-weight:900; font-size:13px; letter-spacing:.04em; margin-bottom:16px;}
   footer{background:var(--ink); color:var(--cream); padding:6vh 6vw; text-align:center; font-size:12px;}
@@ -171,34 +176,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <article id="news-2">
     <div class="date">2026.08.20</div>
     <h2>出演アーティスト発表！</h2>
-    <p>IGA LAUGH &amp; MUSIC FES 2026に出演するアーティスト・芸人・パフォーマーが出揃いました！豪華なラインナップを写真付きでご紹介します。詳しいプロフィールは<a href="index.html#lineup">出演者ページ</a>でもご覧いただけます。</p>
+    <p>IGA LAUGH &amp; MUSIC FES 2026に出演するアーティストが決定しました！当日のステージを盛り上げてくれる、個性豊かな面々をご紹介します。</p>
 
-    <div class="announce-sub">🎵 アーティスト</div>
-    <div class="announce-grid">
-      <div class="announce-item"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"><div class="announce-name">デリカテッセン</div></div>
-      <div class="announce-item"><img src="images/artists/dj-shuc.jpg" alt="DJ SHU-C from osaka L.O.L." loading="lazy"><div class="announce-name">DJ SHU-C from osaka L.O.L.</div></div>
-      <div class="announce-item"><img src="images/artists/ichizenpacker.jpg" alt="イチゼンバッカー" loading="lazy"><div class="announce-name">イチゼンバッカー</div></div>
-      <div class="announce-item"><img src="images/artists/ultrasoul.jpg" alt="ウルトラソウル" loading="lazy"><div class="announce-name">ウルトラソウル</div></div>
-      <div class="announce-item"><img src="images/artists/seshiku.jpg" alt="世史久" loading="lazy"><div class="announce-name">世史久</div></div>
-      <div class="announce-item"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"><div class="announce-name">わっしょいマン</div></div>
-      <div class="announce-item"><img src="images/artists/noko.jpg" alt="NOCO" loading="lazy"><div class="announce-name">NOCO</div></div>
-      <div class="announce-item"><img src="images/artists/atarime-shimada.jpg" alt="あたりめ島田" loading="lazy"><div class="announce-name">あたりめ島田</div></div>
-      <div class="announce-item"><img src="images/artists/bucci.jpg" alt="BUCCI" loading="lazy"><div class="announce-name">BUCCI</div></div>
-      <div class="announce-item"><img src="images/artists/dj-wack2ony.jpg" alt="DJ Wack2ony" loading="lazy"><div class="announce-name">DJ Wack2ony</div></div>
-      <div class="announce-item"><img src="images/artists/katasan.jpg" alt="KATASAN" loading="lazy"><div class="announce-name">KATASAN</div></div>
-      <div class="announce-item"><img src="images/artists/harzey-uni.jpg" alt="HARZEY UNI" loading="lazy"><div class="announce-name">HARZEY UNI</div></div>
-      <div class="announce-item"><img src="images/artists/day4.jpg" alt="Day4" loading="lazy"><div class="announce-name">Day4</div></div>
-      <div class="announce-item"><img src="images/artists/tsuyoshi.jpg" alt="強-tsuyoshi-" loading="lazy"><div class="announce-name">強-tsuyoshi-</div></div>
-    </div>
+    <div class="announce-artist-grid">
+      <div class="announce-artist-card"><img src="images/artists/atarime-shimada.jpg" alt="あたりめ島田" loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">あたりめ島田</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">『ラッパーに惚れたんやない、惚れた男がラッパーやったんや』と妻に言わしめる巧みな押韻スキルを持つラッパー。普段は「あたりめ」という二人組で活動しており、今回はソロで登場する。</p></div></div>
+      <div class="announce-artist-card"><img src="images/artists/ultrasoul.jpg" alt="ウルトラソウル" loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">ウルトラソウル</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">R&amp;B、SOUL、FUNK、City Popなどを要素に、誰もが口ずさみたくなるメロディと耳馴染みの良いサウンドをお届け。お酒に合うJ-POPユニットとして全国のイベントに参上する。</p></div></div>
 
-    <div class="announce-sub">🎭 お笑い芸人</div>
-    <div class="announce-grid">
-      <div class="announce-item"><img src="images/comedians/yabutcha-trio.jpg" alt="やぶっちゃトリオ" loading="lazy"><div class="announce-name">やぶっちゃトリオ</div></div>
-    </div>
+      <div class="announce-artist-card"><img src="images/artists/katasan.jpg" alt="KATASAN" loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">KATASAN</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">ジャンルに囚われないダンスミュージックを中心に活動するユニット「RED CARD」のMIC担当。レゲエサウンド「TKD」にも所属し、今回は満を持してソロで登場。人生適当に適応、面白くなき世を面白く。</p></div></div>
+      <div class="announce-artist-card"><img src="images/artists/noko.jpg" alt="NOCO" loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">NOCO</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">関西の“ここミナミ界隈”で注目を集める、新ジャンルメンヘラPOPシンガー。「わかる〜」と叫び出す共感性の高い歌詞に中毒性・儚さ・痛さ・可愛らしさを詰め込み、POPサウンドでNOCOスタイルの音楽をお届けする。</p></div></div>
 
-    <div class="announce-sub">💃 パフォーマンス</div>
-    <div class="announce-grid">
-      <div class="announce-item"><img src="images/artists/five.jpg" alt="FIVE" loading="lazy"><div class="announce-name">FIVE</div></div>
+      <div class="announce-artist-card"><img src="images/artists/dj-wack2ony.jpg" alt="DJ Wack2ony" loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">DJ Wack2ony</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">関西拠点のオールジャンル・ハウスDJ。ファンキーハウスや四つ打ちを軸に、長年の経験を活かした多彩なプレイスタイルで様々なイベントに出演している。DJ.LanoBoyとのユニット「LOVE.T」としても活動中。</p></div></div>
+      <div class="announce-artist-card"><img src="images/artists/tsuyoshi.jpg" alt="強-tsuyoshi-" loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">強-tsuyoshi-</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">多くのプロアスリートやチームが登場曲・テーマソングに起用する楽曲を手がける。2021年〜2026年、Billboard Live OSAKAにてワンマンLIVEを開催。「全ては唄の中で」をモットーに活動している。</p></div></div>
+
+      <div class="announce-artist-card"><img src="images/artists/harzey-uni.jpg" alt="HARZEY UNI" loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">HARZEY UNI</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">車内REC、言葉のDIY。車の中がスタジオで、走行中のインスピレーションやコンビニの駐車場でレコーディングするのも日常。ジャンルに縛られない“生活の声”寄りのリリックで、音楽と生き方をリンクさせながら制作を続けている。</p></div></div>
+      <div class="announce-artist-card"><img src="images/artists/day4.jpg" alt="Day4" loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">Day4</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">大阪・寝屋川を拠点に活動するDJ。2025年春よりDJ活動を開始し、HIP HOPを軸に4つ打ちを織り交ぜたジャンルレスなプレイを展開。地元で「Buzz Jack Record」を主催しながら、関西から名古屋へも活動の幅を広げている。</p></div></div>
+
+      <div class="announce-artist-card"><img src="images/artists/bucci.jpg" alt="BUCCI" loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">BUCCI</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">1999年にET-KINGとして活動を開始し、2006年にメジャーデビュー。2021年の脱退後はソロアーティストとして活動。力強く心に響く歌声と歌詞で支持を集め、音楽を軸に書道・アート・ファッションなど幅広い表現で独自の世界観を発信している。</p></div></div>
+      <div class="announce-artist-card"><img src="images/artists/wasshoiman.jpg" alt="わっしょいマン" loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">わっしょいマン</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">ステージをふんどし一丁でアゲ続ける唯一無二のお祭り男。レゲエの現場で鍛え上げられたラバダブスタイルにオリジナルわっしょいスタイルを組み合わせた圧倒的パフォーマンスで注目を集める。「楽しんでもらう事が一番」をモットーに、その熱量で全国のファンを魅了している。</p></div></div>
+
+      <div class="announce-artist-card"><img src="images/artists/seshiku.jpg" alt="世史久" loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">世史久</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">「世界の“世”、歴史の“史”、久しい」をキャッチフレーズに関西を拠点に活動。見た目とのギャップある楽曲・パフォーマンスは一度見たら忘れないインパクトを残す関西随一のエンターテイナー。地元・尼崎市のライブハウス「尼崎SCOPE」のブッキングマネージャーも兼任し、全国でライブ活動とイベント制作を行う。</p></div></div>
+      <div class="announce-artist-card"><img src="images/artists/dj-shuc.jpg" alt="DJ SHU-C from osaka L.O.L." loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">DJ SHU-C from osaka L.O.L.</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">osaka L.O.L／REALISTIC／誰が見たいねんフェス等の主催代表。exウエイストDJ&amp;trackmakerとしてm-flo CLUB DJ TOURなど数々のBIG FESに出演。「タビダチ」でメジャーデビューし、着うたでは全国週間1位を獲得。YouTube「誰が見たいねん」chも運営中。</p></div></div>
+
+      <div class="announce-artist-card"><img src="images/artists/ichizenpacker.jpg" alt="イチゼンバッカー" loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">イチゼンバッカー</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">大阪を中心に活動するYU-Z(兄)とJOJI(弟)の双子ユニット。大阪市・大阪エヴェッサ・オリックス・バファローズ・セレッソ大阪による「舞洲プロジェクト」のPRソングを担当。2023年SUMMER SONIC OSAKA×Q's MALL「キューズミュージックコンテスト」で参加総数180組の頂点に立ちグランプリを獲得した。</p></div></div>
+      <div class="announce-artist-card"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"><div class="announce-artist-body"><div class="announce-artist-name">デリカテッセン</div><div class="announce-artist-tag">ARTIST</div><p class="announce-artist-bio">デリカテッセンとして2000年頃から大阪を拠点にアンダーグラウンド・ヒップホップ・シーンを牽引し続け、数々の海外大物アーティストのフロントアクトを務める。2005年シングル「Steppin'」でavex traxよりメジャーデビュー。ONE PIECEエンディングテーマ「ADVENTURE WORLD」やAAA、ET-KINGなどメジャーアーティストへの楽曲提供も行い、現在も精力的にLIVE活動を続けている。</p></div></div>
     </div>
   </article>
 
