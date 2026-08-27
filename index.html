@@ -194,6 +194,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .credit-row:first-of-type{margin-top:28px; padding-top:0; border-top:none;}
   .credit-label{font-size:12px; font-weight:900; letter-spacing:.14em; color:var(--terracotta);}
   .credit-names{margin-top:10px; font-size:15px; font-weight:700; color:var(--ink);}
+  .credit-names.credit-names-list{
+    max-width:760px; margin-left:auto; margin-right:auto;
+    font-size:12.5px; font-weight:500; line-height:2; color:var(--ink-soft);
+  }
 
   .info-grid{
     margin-top:36px; display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
@@ -259,7 +263,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .foodtruck-icon{width:44px; height:44px; object-fit:contain; margin:0 auto;}
 
   /* WORKSHOP */
-  .workshop-cards{grid-template-columns:repeat(3,1fr);}
+  .workshop-cards{grid-template-columns:repeat(2,1fr);}
   @media (max-width:700px){ .workshop-cards{grid-template-columns:1fr;} }
 
   .workshop-feature{
@@ -290,6 +294,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (prefers-reduced-motion: reduce){ .workshop-emoji{animation:none;} }
   .workshop-cards .who{margin-top:12px;}
   .workshop-sub{display:block; margin-top:6px; font-size:11px; font-weight:700; color:var(--ink-soft);}
+  .workshop-time{display:block; margin-top:6px; font-size:11px; font-weight:900; color:var(--terracotta);}
 
   /* LINEUP */
   .lineup-sub{margin-top:36px; font-size:clamp(20px,4.4vw,30px); font-weight:900; letter-spacing:.06em; color:var(--forest); display:flex; align-items:center; gap:10px;}
@@ -504,7 +509,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h1 class="title-text">IGA LAUGH &amp; MUSIC FES 2026<br><span>やぶっちゃと愉快な仲間たち</span></h1>
   <p class="hero-tagline">〜笑って、歌って、自然と遊ぶ〜</p>
   <div class="eyebrow-lg">
-    <div class="line-date"><span class="accent">2026.9.23 水・祝</span>　11:00–19:00</div>
+    <div class="line-date"><span class="accent">2026.9.23 水・祝</span>　10:00–18:00</div>
     <div class="line-live">LIVE開演13:00／終演18:00</div>
     <div class="line-venue">島ヶ原温泉やぶっちゃ　芝生広場（バスケコート下）</div>
   </div>
@@ -515,6 +520,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="eyebrow reveal">NEWS</span>
     <h2 class="reveal">お知らせ</h2>
     <ul class="news-list">
+      <li class="reveal"><a href="news.html#news-3"><span class="news-date">2026.08.27</span><span class="news-title">タイムテーブル・出演者・キッチンカー情報を更新しました</span></a></li>
       <li class="reveal"><a href="news.html#news-2"><span class="news-date">2026.08.20</span><span class="news-title">出演アーティスト発表！</span></a></li>
       <li class="reveal"><a href="news.html#news-1"><span class="news-date">2026.08.11</span><span class="news-title">IGA LAUGH &amp; MUSIC FES 2026 公式サイトを公開しました</span></a></li>
     </ul>
@@ -563,6 +569,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="artist-card" tabindex="0" data-name="HARZEY UNI" data-tag="ARTIST" data-photo="images/artists/harzey-uni.jpg" data-bio="車内REC、言葉のDIY。車の中がスタジオで、走行中のインスピレーションやコンビニの駐車場でレコーディングするのも日常。ジャンルに縛られない“生活の声”寄りのリリックで、音楽と生き方をリンクさせながら制作を続けている。"><div class="thumb"><img src="images/artists/harzey-uni.jpg" alt="HARZEY UNI" loading="lazy"></div><div class="meta"><div class="name">HARZEY UNI</div><div class="tag">ARTIST</div><div class="detail-btn">詳細を見る</div></div></div>
       <div class="artist-card" tabindex="0" data-name="Day4" data-tag="ARTIST" data-photo="images/artists/day4.jpg" data-bio="大阪・寝屋川を拠点に活動するDJ。2025年春よりDJ活動を開始し、HIP HOPを軸に4つ打ちを織り交ぜたジャンルレスなプレイを展開。地元で「Buzz Jack Record」を主催しながら、関西から名古屋へも活動の幅を広げている。"><div class="thumb"><img src="images/artists/day4.jpg" alt="Day4" loading="lazy"></div><div class="meta"><div class="name">Day4</div><div class="tag">ARTIST</div><div class="detail-btn">詳細を見る</div></div></div>
       <div class="artist-card" tabindex="0" data-name="強-tsuyoshi-" data-tag="ARTIST" data-photo="images/artists/tsuyoshi.jpg" data-bio="多くのプロアスリートやチームが登場曲・テーマソングに起用する楽曲を手がける。2021年〜2026年、Billboard Live OSAKAにてワンマンLIVEを開催。「全ては唄の中で」をモットーに活動している。"><div class="thumb"><img src="images/artists/tsuyoshi.jpg" alt="強-tsuyoshi-" loading="lazy"></div><div class="meta"><div class="name">強-tsuyoshi-</div><div class="tag">ARTIST</div><div class="detail-btn">詳細を見る</div></div></div>
+      <div class="artist-card"><div class="thumb"><img src="images/artists/rabbit.jpg" alt="ラビット" loading="lazy"></div><div class="meta"><div class="name">ラビット</div><div class="tag">ARTIST</div></div></div>
       <!-- 同じ内容を複製してループを継ぎ目なく見せています -->
       <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="デリカテッセン" data-tag="ARTIST" data-photo="images/artists/delicatessen.jpg" data-bio="デリカテッセンとして2000年頃から大阪を拠点にアンダーグラウンド・ヒップホップ・シーンを牽引し続け、数々の海外大物アーティストのフロントアクトを務める。2005年シングル「Steppin'」でavex traxよりメジャーデビュー。ONE PIECEエンディングテーマ「ADVENTURE WORLD」やAAA、ET-KINGなどメジャーアーティストへの楽曲提供も行い、現在も精力的にLIVE活動を続けている。"><div class="thumb"><img src="images/artists/delicatessen.jpg" alt="デリカテッセン" loading="lazy"></div><div class="meta"><div class="name">デリカテッセン</div><div class="tag">ARTIST</div><div class="detail-btn">詳細を見る</div></div></div>
       <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="DJ SHU-C from osaka L.O.L." data-tag="ARTIST" data-photo="images/artists/dj-shuc.jpg" data-bio="osaka L.O.L／REALISTIC／誰が見たいねんフェス等の主催代表。exウエイストDJ&amp;trackmakerとしてm-flo CLUB DJ TOURなど数々のBIG FESに出演。「タビダチ」でメジャーデビューし、着うたでは全国週間1位を獲得。YouTube「誰が見たいねん」chも運営中。"><div class="thumb"><img src="images/artists/dj-shuc.jpg" alt="DJ SHU-C from osaka L.O.L." loading="lazy"></div><div class="meta"><div class="name">DJ SHU-C<br>from osaka L.O.L.</div><div class="tag">ARTIST</div><div class="detail-btn">詳細を見る</div></div></div>
@@ -578,13 +585,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="HARZEY UNI" data-tag="ARTIST" data-photo="images/artists/harzey-uni.jpg" data-bio="車内REC、言葉のDIY。車の中がスタジオで、走行中のインスピレーションやコンビニの駐車場でレコーディングするのも日常。ジャンルに縛られない“生活の声”寄りのリリックで、音楽と生き方をリンクさせながら制作を続けている。"><div class="thumb"><img src="images/artists/harzey-uni.jpg" alt="HARZEY UNI" loading="lazy"></div><div class="meta"><div class="name">HARZEY UNI</div><div class="tag">ARTIST</div><div class="detail-btn">詳細を見る</div></div></div>
       <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="Day4" data-tag="ARTIST" data-photo="images/artists/day4.jpg" data-bio="大阪・寝屋川を拠点に活動するDJ。2025年春よりDJ活動を開始し、HIP HOPを軸に4つ打ちを織り交ぜたジャンルレスなプレイを展開。地元で「Buzz Jack Record」を主催しながら、関西から名古屋へも活動の幅を広げている。"><div class="thumb"><img src="images/artists/day4.jpg" alt="Day4" loading="lazy"></div><div class="meta"><div class="name">Day4</div><div class="tag">ARTIST</div><div class="detail-btn">詳細を見る</div></div></div>
       <div class="artist-card" aria-hidden="true" tabindex="-1" data-name="強-tsuyoshi-" data-tag="ARTIST" data-photo="images/artists/tsuyoshi.jpg" data-bio="多くのプロアスリートやチームが登場曲・テーマソングに起用する楽曲を手がける。2021年〜2026年、Billboard Live OSAKAにてワンマンLIVEを開催。「全ては唄の中で」をモットーに活動している。"><div class="thumb"><img src="images/artists/tsuyoshi.jpg" alt="強-tsuyoshi-" loading="lazy"></div><div class="meta"><div class="name">強-tsuyoshi-</div><div class="tag">ARTIST</div><div class="detail-btn">詳細を見る</div></div></div>
+      <div class="artist-card" aria-hidden="true"><div class="thumb"><img src="images/artists/rabbit.jpg" alt="ラビット" loading="lazy"></div><div class="meta"><div class="name">ラビット</div><div class="tag">ARTIST</div></div></div>
     </div>
   </div>
   <div id="comedian" class="wrap lineup-divider">
     <div class="lineup-sub reveal"><img class="lineup-icon" src="images/icons/icon-owarai.png" alt="">お笑い芸人</div>
     <div class="comedian-solo reveal">
-      <div class="artist-card" tabindex="0" data-name="やぶっちゃトリオ" data-tag="COMEDIAN" data-photo="images/comedians/yabutcha-trio.jpg" data-bio="「やぶっちゃ盛り上げ隊」ことやぶっちゃトリオ。メンバーは泉・薬師寺・いわしの3人。コントやトークはもちろん、イベントMCからお客様参加型の企画まで、会場を巻き込みながら笑顔と元気をお届けします。子どもから大人までみんなで楽しめるステージで、やぶっちゃをもっと楽しく、もっと面白く！"><div class="thumb"><img src="images/comedians/yabutcha-trio.jpg" alt="やぶっちゃトリオ" loading="lazy"></div><div class="meta"><div class="name">やぶっちゃトリオ</div><div class="tag">COMEDIAN</div><div class="detail-btn">詳細を見る</div></div></div>
-      <div class="artist-card"><div class="thumb and-more-thumb">and more...</div><div class="meta"><div class="name">近日発表</div><div class="tag">COMING SOON</div></div></div>
+      <div class="artist-card" tabindex="0" data-name="やぶっちゃトリオと愉快な仲間たち" data-tag="COMEDIAN" data-photo="images/comedians/yabutcha-trio.jpg" data-bio="「やぶっちゃ盛り上げ隊」ことやぶっちゃトリオ。メンバーは泉・薬師寺・いわしの3人。コントやトークはもちろん、イベントMCからお客様参加型の企画まで、会場を巻き込みながら笑顔と元気をお届けします。子どもから大人までみんなで楽しめるステージで、やぶっちゃをもっと楽しく、もっと面白く！"><div class="thumb"><img src="images/comedians/yabutcha-trio.jpg" alt="やぶっちゃトリオと愉快な仲間たち" loading="lazy"></div><div class="meta"><div class="name">やぶっちゃトリオと愉快な仲間たち</div><div class="tag">COMEDIAN</div><div class="detail-btn">詳細を見る</div></div></div>
     </div>
   </div>
   <div class="wrap lineup-divider">
@@ -656,6 +663,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="who">くまんとこのキッチンカー</div>
         <div class="day">ピザ&amp;グリル</div>
       </div>
+      <div class="ticket-card reveal">
+        <div class="truck-photo"><img src="images/foodtrucks/kings-deli.jpg" alt="KINGS DELI" loading="lazy"></div>
+        <div class="who">KINGS DELI</div>
+        <div class="day">デリボウル</div>
+      </div>
     </div>
     <div class="foodtruck-more reveal">and more...</div>
   </div>
@@ -666,27 +678,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="eyebrow reveal">WORKSHOP</span>
     <h2 class="reveal">ワークショップ</h2>
     <p class="lead reveal">大人も子どもも楽しめる体験型ワークショップで、伊賀の大自然を全力で楽しもう！</p>
-    <div class="section-time reveal">⏰ 11:00〜開催</div>
+    <div class="section-time reveal">⏰ 10:00〜開催</div>
     <div class="workshop-feature reveal" tabindex="0" data-name="リズム遊び" data-tag="WORKSHOP" data-photo="images/workshop/kajiwara-portrait.jpg" data-bio="元THE BLUE HEARTSのドラマーで、日本のみならずアメリカ・イタリア・アルゼンチンなど世界各地で演奏を続ける梶原徹也さん。和太鼓やダンスとのコラボ、大塚愛バンドでのNHK紅白歌合戦出場など、ジャンルを超えて活動する本物のグルーヴを、バケツや空き容器を叩くリズム遊びで体感できます。">
       <div class="workshop-feature-photo"><img src="images/workshop/rhythm-play.jpg" alt="リズム遊び" loading="lazy"></div>
       <div class="workshop-feature-body">
         <div class="workshop-feature-credit">元THE BLUE HEARTS 梶原徹也さんが登場</div>
         <div class="workshop-feature-title">リズム遊び</div>
+        <div class="workshop-time">⏰ 10:30〜11:30</div>
         <p class="workshop-feature-desc">バケツや空き容器を叩いて、世界を舞台に活動する本物のグルーヴを体感。小さなお子さまも気軽に参加できます。</p>
       </div>
     </div>
     <div class="ticket-cards workshop-cards">
       <div class="ticket-card reveal" tabindex="0" data-name="鮎つかみ取り" data-tag="WORKSHOP" data-photo="images/workshop/ayu-catching.jpg" data-bio="芝生広場わきの清流で、素手で鮎を追いかける昔ながらの川遊び。捕まえた鮎はその場で味わうこともできます(詳細は当日ご案内)。">
         <div class="truck-photo"><img src="images/workshop/ayu-catching.jpg" alt="鮎つかみ取り" loading="lazy"></div>
-        <div class="who">鮎つかみ取り</div>
+        <div class="who">鮎つかみ取り<span class="workshop-time">⏰ 13:00〜14:00</span></div>
       </div>
-      <div class="ticket-card reveal" style="transition-delay:.05s;" tabindex="0" data-name="フライフィッシング遊び" data-tag="WORKSHOP" data-photo="images/workshop/flyfishing.jpg" data-bio="川に浮かべたカラーコーンめがけてキャスティング。狙いを定めて釣り竿を振る、フライフィッシング気分を味わえる的当てゲームです。">
-        <div class="truck-photo"><img src="images/workshop/flyfishing.jpg" alt="フライフィッシング遊び" loading="lazy"></div>
-        <div class="who">フライフィッシング遊び</div>
-      </div>
-      <div class="ticket-card reveal" style="transition-delay:.1s;" tabindex="0" data-name="フリースロー" data-tag="WORKSHOP" data-photo="images/workshop/freethrow.jpg" data-bio="MIE SHINOBI GATHERSのメンバーと一緒に、3人制バスケコートでフリースローに挑戦。バスケ初心者のお子さまも大歓迎です。">
-        <div class="truck-photo"><img src="images/workshop/freethrow.jpg" alt="フリースロー" loading="lazy"></div>
-        <div class="who">フリースロー<span class="workshop-sub">MIE SHINOBI GATHERS</span></div>
+      <div class="ticket-card reveal" style="transition-delay:.05s;" tabindex="0" data-name="バスケットボールエキシビションマッチ" data-tag="WORKSHOP" data-photo="images/workshop/freethrow.jpg" data-bio="伊賀市の3×3プロチーム「MIE SHINOBI GATHERS」によるバスケットボールエキシビションマッチ。選手と一緒にフリースローへ挑戦できるコーナーも。バスケ初心者のお子さまも大歓迎です。">
+        <div class="truck-photo"><img src="images/workshop/freethrow.jpg" alt="バスケットボールエキシビションマッチ" loading="lazy"></div>
+        <div class="who">バスケットボールエキシビションマッチ<span class="workshop-sub">伊賀市3×3プロチーム MIE SHINOBI GATHERS</span><span class="workshop-time">⏰ 11:30〜12:00</span></div>
       </div>
     </div>
   </div>
@@ -815,11 +824,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="credit-row reveal">
       <div class="credit-label">協賛</div>
-      <div class="credit-names">COMING SOON</div>
+      <div class="credit-names credit-names-list">株式会社上野ガス／株式会社ワールド／株式会社共同技術コンサルタント／北山鍼灸院／株式会社GREEN／伊賀ふるさと農業協同組合 上野北支店 島ヶ原／株式会社伊賀 ヒルホテルサンピア伊賀／サントリーバレッジソリューションズ株式会社／株式会社福岡醤油店／株式会社森永食品クック／肉のよしだ／ホシザキ東海株式会社／株式会社慶菜工務店／マルタカライス／有限会社上野清掃社／有限会社アート工房／株式会社TS／北伊勢上野信用金庫 城北支店／有限会社吹田総業（FKTモール）／株式会社鈴商／株式会社菊野商店／株式会社大田酒造／ひなたぼっこ／株式会社アート／株式会社富士薬品 伊賀上野営業所／旬魚菜 キッチンよく多／株式会社トーマイレジファン／キンキ・パートナーズ／レチュード</div>
     </div>
     <div class="credit-row reveal">
       <div class="credit-label">協力</div>
-      <div class="credit-names">MIE SHINOBI GATHERS</div>
+      <div class="credit-names credit-names-list">MIE SHINOBI GATHERS／伊賀上野ケーブルテレビ株式会社／株式会社YOU／伊賀タウン情報ユー／株式会社読売奈良ライフ／月刊地域情報yomiっこ／株式会社ウーマンライフ新聞社</div>
     </div>
   </div>
 </section>
