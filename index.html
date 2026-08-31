@@ -380,22 +380,10 @@
     .artist-modal-card{animation:none; transform:none; opacity:1;}
   }
 
-  .mc-row{display:flex; flex-wrap:wrap; gap:16px;}
-  .performance-mc-row{display:flex; gap:32px; align-items:flex-start;}
-  .performance-col, .mc-col{flex:1; min-width:0;}
-  @media (max-width:700px){ .performance-mc-row{flex-direction:column; gap:28px;} }
   .performance-solo{display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-top:24px;}
   .performance-solo .artist-card{width:min(35vw, 200px);}
   .comedian-solo{display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:18px;}
   .comedian-solo .artist-card .thumb.and-more-thumb{font-size:16px;}
-  .mc-credit{
-    margin-top:28px; display:inline-flex; align-items:center; gap:18px;
-    background:#fff; border:1px solid var(--line); border-radius:18px;
-    padding:14px 28px 14px 14px;
-  }
-  .mc-photo{width:88px; height:88px; border-radius:50%; object-fit:cover; flex-shrink:0;}
-  .mc-label{font-size:12px; font-weight:900; color:var(--terracotta); letter-spacing:.1em;}
-  .mc-name{margin-top:4px; font-size:20px; font-weight:900;}
 
   /* scroll reveal */
   .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
@@ -606,30 +594,15 @@
     </div>
   </div>
   <div class="wrap lineup-divider">
-    <div class="performance-mc-row">
-      <div class="performance-col">
-        <div class="lineup-sub reveal">パフォーマンス</div>
-        <div class="performance-solo">
-          <div class="artist-card">
-            <div class="thumb"><img src="images/artists/five.jpg" alt="FIVE" loading="lazy"></div>
-            <div class="meta"><div class="name">FIVE</div><div class="tag">PERFORMANCE</div></div>
-          </div>
-          <div class="artist-card" tabindex="0" data-name="小浜一家" data-tag="PERFORMANCE" data-photo="images/artists/kohama-ikka.jpg" data-bio="アフリカの太鼓文化を学び、その躍動感あふれるリズムを軸に、三線・ゴッタン・ジェンベ・ドゥンドゥンを組み合わせた“踊れる民謡・和踊り”を創り出すオリジナル家族バンド。ステージでは観客を巻き込みながら、お祭りのような一体感ある空間を再現。世代を越えて楽しめる、参加型のリズムパフォーマンスを届けています。">
-            <div class="thumb"><img src="images/artists/kohama-ikka.jpg" alt="小浜一家" loading="lazy"></div>
-            <div class="meta"><div class="name">小浜一家</div><div class="tag">PERFORMANCE</div><div class="detail-btn">詳細を見る</div></div>
-          </div>
-        </div>
+    <div class="lineup-sub reveal">パフォーマンス</div>
+    <div class="performance-solo">
+      <div class="artist-card">
+        <div class="thumb"><img src="images/artists/five.jpg" alt="FIVE" loading="lazy"></div>
+        <div class="meta"><div class="name">FIVE</div><div class="tag">PERFORMANCE</div></div>
       </div>
-      <div class="mc-col">
-        <div class="mc-row">
-          <div class="mc-credit reveal">
-            <img class="mc-photo" src="images/mc/nasu-ayumi.jpg" alt="那須歩美" loading="lazy">
-            <div>
-              <div class="mc-label">司会</div>
-              <div class="mc-name">那須歩美</div>
-            </div>
-          </div>
-        </div>
+      <div class="artist-card" tabindex="0" data-name="小浜一家" data-tag="PERFORMANCE" data-photo="images/artists/kohama-ikka.jpg" data-bio="アフリカの太鼓文化を学び、その躍動感あふれるリズムを軸に、三線・ゴッタン・ジェンベ・ドゥンドゥンを組み合わせた“踊れる民謡・和踊り”を創り出すオリジナル家族バンド。ステージでは観客を巻き込みながら、お祭りのような一体感ある空間を再現。世代を越えて楽しめる、参加型のリズムパフォーマンスを届けています。">
+        <div class="thumb"><img src="images/artists/kohama-ikka.jpg" alt="小浜一家" loading="lazy"></div>
+        <div class="meta"><div class="name">小浜一家</div><div class="tag">PERFORMANCE</div><div class="detail-btn">詳細を見る</div></div>
       </div>
     </div>
   </div>
