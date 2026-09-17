@@ -265,8 +265,7 @@
   .foodtruck-icon{width:44px; height:44px; object-fit:contain; margin:0 auto;}
 
   /* WORKSHOP */
-  .workshop-cards{grid-template-columns:repeat(2,1fr);}
-  @media (max-width:700px){ .workshop-cards{grid-template-columns:1fr;} }
+  .workshop-cards{grid-template-columns:repeat(auto-fit,minmax(220px,300px)); justify-content:center;}
 
   .workshop-feature{
     display:grid; grid-template-columns:1fr 1.1fr; gap:28px; align-items:center;
@@ -281,6 +280,7 @@
   .workshop-feature-credit{font-size:11.5px; font-weight:900; color:var(--terracotta); letter-spacing:.06em;}
   .workshop-feature-title{margin-top:6px; font-size:clamp(19px,2.4vw,23px); font-weight:900;}
   .workshop-feature-desc{margin-top:10px; font-size:13px; color:var(--ink-soft); line-height:1.9;}
+  .workshop-feature-vs{margin-top:8px; font-size:12.5px; font-weight:700; color:var(--ink-soft);}
   @media (max-width:700px){
     .workshop-feature{grid-template-columns:1fr; padding:16px;}
   }
@@ -297,6 +297,7 @@
   .workshop-cards .who{margin-top:12px;}
   .workshop-sub{display:block; margin-top:6px; font-size:11px; font-weight:700; color:var(--ink-soft);}
   .workshop-time{display:block; margin-top:6px; font-size:11px; font-weight:900; color:var(--terracotta);}
+  .workshop-price{display:block; margin-top:6px; font-size:11px; font-weight:900; color:var(--forest);}
 
   /* LINEUP */
   .lineup-sub{margin-top:36px; font-size:clamp(20px,4.4vw,30px); font-weight:900; letter-spacing:.06em; color:var(--forest); display:flex; align-items:center; gap:10px;}
@@ -512,6 +513,7 @@
     <span class="eyebrow reveal">NEWS</span>
     <h2 class="reveal">お知らせ</h2>
     <ul class="news-list">
+      <li class="reveal"><a href="news.html#news-4"><span class="news-date">2026.09.16</span><span class="news-title">パフォーマンス・ワークショップ・スペシャルゲスト・グッズ情報を追加しました</span></a></li>
       <li class="reveal"><a href="news.html#news-3"><span class="news-date">2026.08.27</span><span class="news-title">タイムテーブル・出演者・キッチンカー情報を更新しました</span></a></li>
       <li class="reveal"><a href="news.html#news-2"><span class="news-date">2026.08.20</span><span class="news-title">出演アーティスト発表！</span></a></li>
       <li class="reveal"><a href="news.html#news-1"><span class="news-date">2026.08.11</span><span class="news-title">IGA LAUGH &amp; MUSIC FES 2026 公式サイトを公開しました</span></a></li>
@@ -596,9 +598,13 @@
   <div class="wrap lineup-divider">
     <div class="lineup-sub reveal">パフォーマンス</div>
     <div class="performance-solo">
-      <div class="artist-card">
+      <div class="artist-card" tabindex="0" data-name="FIVE" data-tag="PERFORMANCE" data-photo="images/artists/five.jpg" data-bio="三重県伊賀市でダンス&amp;ダブルダッチスクール「FiveDance&amp;DoubleDutch」を主宰。ダンスやダブルダッチを通じて自然体験や異年齢交流にも取り組み、感謝する気持ちや探究心、豊かな人間性を育む活動を展開。大会に入賞する生徒を続々と輩出しています。">
         <div class="thumb"><img src="images/artists/five.jpg" alt="FIVE" loading="lazy"></div>
-        <div class="meta"><div class="name">FIVE</div><div class="tag">PERFORMANCE</div></div>
+        <div class="meta"><div class="name">FIVE</div><div class="tag">PERFORMANCE</div><div class="detail-btn">詳細を見る</div></div>
+      </div>
+      <div class="artist-card" tabindex="0" data-name="GLAMOR DANCER" data-tag="PERFORMANCE" data-photo="images/artists/glamor-dancer.jpg" data-bio="2014年結成、メンバー総勢50名を誇る日本最大級のGOGOダンサーチーム。関西を中心に全国の有名CLUBで活躍し、2017年からは台湾・シンガポール・マカオなど海外にも進出。年間2000回以上のステージに立ち、見る者を魅了してやまない、今最も勢いのあるダンサー集団です。">
+        <div class="thumb"><img src="images/artists/glamor-dancer.jpg" alt="GLAMOR DANCER" loading="lazy"></div>
+        <div class="meta"><div class="name">GLAMOR DANCER</div><div class="tag">PERFORMANCE</div><div class="detail-btn">詳細を見る</div></div>
       </div>
       <div class="artist-card" tabindex="0" data-name="小浜一家" data-tag="PERFORMANCE" data-photo="images/artists/kohama-ikka.jpg" data-bio="アフリカの太鼓文化を学び、その躍動感あふれるリズムを軸に、三線・ゴッタン・ジェンベ・ドゥンドゥンを組み合わせた“踊れる民謡・和踊り”を創り出すオリジナル家族バンド。ステージでは観客を巻き込みながら、お祭りのような一体感ある空間を再現。世代を越えて楽しめる、参加型のリズムパフォーマンスを届けています。">
         <div class="thumb"><img src="images/artists/kohama-ikka.jpg" alt="小浜一家" loading="lazy"></div>
@@ -665,28 +671,56 @@
       <div class="workshop-feature-body">
         <div class="workshop-feature-credit">元THE BLUE HEARTS 梶原徹也さんが登場</div>
         <div class="workshop-feature-title">リズム遊び</div>
-        <div class="workshop-time">⏰ 10:30〜11:30</div>
+        <div class="workshop-time">⏰ 10:00集合／10:30〜11:30</div>
         <p class="workshop-feature-desc">バケツや空き容器を叩いて、世界を舞台に活動する本物のグルーヴを体感。小さなお子さまも気軽に参加できます。</p>
+      </div>
+    </div>
+    <div class="workshop-feature reveal" tabindex="0" data-name="バスケットボールエキシビションマッチ" data-tag="WORKSHOP" data-photo="images/workshop/freethrow.jpg" data-bio="3x3のプロチーム同士が激戦！伊賀市のMIE SHINOBI GATHERSを応援しよう！対戦相手はNARA GREATBUDDHERS、AICHI S.ONE。選手と一緒にフリースローへ挑戦できるコーナーも。バスケ初心者のお子さまも大歓迎です。">
+      <div class="workshop-feature-photo"><img src="images/workshop/freethrow.jpg" alt="バスケットボールエキシビションマッチ" loading="lazy"></div>
+      <div class="workshop-feature-body">
+        <div class="workshop-feature-credit">伊賀市3×3プロチーム MIE SHINOBI GATHERS 登場</div>
+        <div class="workshop-feature-title">バスケットボールエキシビションマッチ</div>
+        <div class="workshop-feature-vs">対戦相手：NARA GREATBUDDHERS／AICHI S.ONE</div>
+        <div class="workshop-time">⏰ 11:30〜12:00</div>
+        <p class="workshop-feature-desc">3x3のプロチーム同士が激戦！伊賀市のMIE SHINOBI GATHERSを応援しよう！</p>
       </div>
     </div>
     <div class="ticket-cards workshop-cards">
       <div class="ticket-card reveal" tabindex="0" data-name="鮎つかみ取り" data-tag="WORKSHOP" data-photo="images/workshop/ayu-catching.jpg" data-bio="芝生広場わきの清流で、素手で鮎を追いかける昔ながらの川遊び。捕まえた鮎はその場で味わうこともできます(詳細は当日ご案内)。">
         <div class="truck-photo"><img src="images/workshop/ayu-catching.jpg" alt="鮎つかみ取り" loading="lazy"></div>
-        <div class="who">鮎つかみ取り<span class="workshop-time">⏰ 13:00〜14:00</span></div>
+        <div class="who">鮎つかみ取り<span class="workshop-time">⏰ 13:00〜14:00</span><span class="workshop-price">💴 500円/名</span></div>
       </div>
-      <div class="ticket-card reveal" style="transition-delay:.05s;" tabindex="0" data-name="バスケットボールエキシビションマッチ" data-tag="WORKSHOP" data-photo="images/workshop/freethrow.jpg" data-bio="伊賀市の3×3プロチーム「MIE SHINOBI GATHERS」によるバスケットボールエキシビションマッチ。選手と一緒にフリースローへ挑戦できるコーナーも。バスケ初心者のお子さまも大歓迎です。">
-        <div class="truck-photo"><img src="images/workshop/freethrow.jpg" alt="バスケットボールエキシビションマッチ" loading="lazy"></div>
-        <div class="who">バスケットボールエキシビションマッチ<span class="workshop-sub">伊賀市3×3プロチーム MIE SHINOBI GATHERS</span><span class="workshop-time">⏰ 11:30〜12:00</span></div>
+      <div class="ticket-card reveal" style="transition-delay:.05s;" tabindex="0" data-name="辻井ほのか" data-tag="SPECIAL GUEST" data-photo="images/guests/tsujii-honoka.jpg" data-bio="スペシャルゲストとして会場に登場する辻井ほのかさん。鮎つかみ取りと同じ会場エリアで、ツーショットチェキ撮影のフォトセッションを開催します。">
+        <div class="truck-photo"><img src="images/guests/tsujii-honoka.jpg" alt="辻井ほのか" loading="lazy"></div>
+        <div class="who">辻井ほのか<span class="workshop-sub">スペシャルゲスト フォトセッション(ツーショットチェキ撮影)</span><span class="workshop-price">💴 1,000円</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <section id="goods" class="band">
-  <div class="wrap">
+  <div class="wrap wrap-wide">
     <span class="eyebrow reveal">GOODS</span>
     <h2 class="reveal">オリジナルグッズ</h2>
-    <p class="lead reveal">COMING SOON</p>
+    <p class="lead reveal">当日会場ではオリジナルグッズを販売予定。ラインナップをご紹介します。</p>
+    <div class="ticket-cards">
+      <div class="ticket-card reveal">
+        <div class="truck-photo"><img src="images/goods/tshirt.png" alt="オリジナルTシャツ" loading="lazy"></div>
+        <div class="who">オリジナルTシャツ</div>
+      </div>
+      <div class="ticket-card reveal" style="transition-delay:.05s;">
+        <div class="truck-photo"><img src="images/goods/tshirt-pink.png" alt="オリジナルTシャツ(ピンク)" loading="lazy"></div>
+        <div class="who">オリジナルTシャツ(ピンク)</div>
+      </div>
+      <div class="ticket-card reveal" style="transition-delay:.1s;">
+        <div class="truck-photo"><img src="images/goods/sticker.png" alt="オリジナルステッカー" loading="lazy"></div>
+        <div class="who">オリジナルステッカー</div>
+      </div>
+      <div class="ticket-card reveal">
+        <div class="truck-photo" style="background:#fff;"><img src="images/goods/towel.jpg" alt="オリジナルタオル" loading="lazy" style="object-fit:contain;"></div>
+        <div class="who">オリジナルタオル</div>
+      </div>
+    </div>
   </div>
 </section>
 
