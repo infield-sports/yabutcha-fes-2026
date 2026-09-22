@@ -146,7 +146,7 @@
 <header>
   <a href="index.html"><img class="header-logo" src="images/logo-06-transparent.png" alt="IGA LAUGH & MUSIC FES 2026"></a>
   <div class="header-right">
-    <a class="ig-link" href="https://www.instagram.com/yabutcha_onsen_camp/" target="_blank" rel="noopener" aria-label="Instagram">
+    <a class="ig-link" href="https://www.instagram.com/yabutcha_onsen_camp/" target="_blank" rel="noopener" aria-label="Instagram" data-gtag-event="social_click" data-gtag-label="instagram_header_news">
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5.5"/>
         <circle cx="12" cy="12" r="4.3"/>
@@ -163,7 +163,7 @@
       <a class="btn btn-soft" href="index.html#workshop">ワークショップ</a>
       <a class="btn btn-soft" href="index.html#foodtruck">キッチンカー</a>
       <a class="btn btn-soft" href="index.html#access">アクセス</a>
-      <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener">チケット</a>
+      <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener" data-gtag-event="ticket_cta_click" data-gtag-label="news_header_nav">チケット</a>
     </nav>
   </div>
   <div class="nav-scrim"></div>
@@ -244,7 +244,7 @@
 <footer>
   <div class="footer-title">IGA LAUGH &amp; MUSIC FES 2026</div>
   <div class="footer-yabutcha-logo">
-    <a href="https://www.yabutcha.com/" target="_blank" rel="noopener">
+    <a href="https://www.yabutcha.com/" target="_blank" rel="noopener" data-gtag-event="outbound_click" data-gtag-label="footer_yabutcha_news">
       <img src="images/yabutcha-logo-transparent.png" alt="島ヶ原温泉やぶっちゃ">
     </a>
   </div>
@@ -287,6 +287,18 @@
     if (window.innerWidth > 700) closeNav();
   });
 })();
+
+// GA4カスタムイベント計測(チケット導線・外部リンククリック)
+document.addEventListener('click', function (e) {
+  if (typeof gtag !== 'function') return;
+  var tracked = e.target.closest('[data-gtag-event]');
+  if (tracked) {
+    gtag('event', tracked.getAttribute('data-gtag-event'), {
+      event_category: 'engagement',
+      event_label: tracked.getAttribute('data-gtag-label') || ''
+    });
+  }
+});
 </script>
 
 </body>
