@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IGA LAUGH & MUSIC FES 2026 やぶっちゃと愉快な仲間たち</title>
-<meta name="description" content="2026年9月23日(水・祝)、島ヶ原温泉やぶっちゃ・芝生広場で開催する野外音楽×お笑いフェスティバル。">
+<meta name="description" content="2026年9月23日(水・祝)、島ヶ原温泉やぶっちゃ・芝生広場で開催した野外音楽×お笑いフェスティバル。">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -174,6 +174,7 @@
     transition:background .2s ease, color .2s ease, border-color .2s ease;
   }
   .btn-fill{background:var(--terracotta); color:#fff;}
+  .btn-disabled{background:#9b9b93; color:#fff; cursor:default;}
   .btn-outline{background:transparent; color:#fff; border-color:rgba(255,255,255,0.8);}
   .btn-soft{background:transparent; color:var(--ink); border-color:transparent; border-radius:8px; font-weight:700;}
   .btn-soft:hover{background:var(--forest); color:#fff;}
@@ -447,9 +448,24 @@
   .footer-yabutcha-logo img{width:100%; height:auto; object-fit:contain; transition:opacity .2s;}
   .footer-yabutcha-logo a:hover img{opacity:.8;}
   footer .col{opacity:.8; line-height:2;}
+
+  /* THANK YOU RIBBON */
+  .thanks-ribbon{
+    background:var(--forest); color:#fff; text-align:center;
+    padding:10px 16px; overflow-wrap:break-word;
+  }
+  .thanks-ribbon-hand{font-size:16px; margin-right:6px;}
+  .thanks-ribbon-text{font-size:12.5px; font-weight:700;}
+  .thanks-ribbon-link{display:inline-block; margin-left:6px; font-size:12.5px; font-weight:900; color:#fff; text-decoration:underline;}
 </style>
 </head>
 <body>
+
+<div class="thanks-ribbon">
+  <span class="hand thanks-ribbon-hand">Thank you!</span>
+  <span class="thanks-ribbon-text">9/23 IGA LAUGH &amp; MUSIC FES 2026 は無事終了しました。ご来場ありがとうございました。</span>
+  <a class="thanks-ribbon-link" href="news.html#news-6" data-gtag-event="nav_click" data-gtag-label="thanks_ribbon">お礼のメッセージを読む →</a>
+</div>
 
 <header>
   <a href="#top"><img class="header-logo" src="images/logo-06-transparent.png" alt="IGA LAUGH & MUSIC FES 2026"></a>
@@ -471,7 +487,7 @@
       <a class="btn btn-soft" href="#workshop">ワークショップ</a>
       <a class="btn btn-soft" href="#foodtruck">キッチンカー</a>
       <a class="btn btn-soft" href="#access">アクセス</a>
-      <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener" data-gtag-event="ticket_cta_click" data-gtag-label="header_nav">チケット</a>
+      <span class="btn btn-disabled">受付終了</span>
     </nav>
   </div>
   <div class="nav-scrim"></div>
@@ -513,6 +529,7 @@
     <h2 class="reveal">お知らせ</h2>
     <ul class="news-list">
       <li class="reveal"><a href="news.html#news-5"><span class="news-date">2026.09.21</span><span class="news-title">当日のタイムテーブルを公開しました</span></a></li>
+      <li class="reveal"><a href="news.html#news-6"><span class="news-date">2026.09.25</span><span class="news-title">ご来場ありがとうございました</span></a></li>
       <li class="reveal"><a href="news.html#news-4"><span class="news-date">2026.09.16</span><span class="news-title">パフォーマンス・ワークショップ・スペシャルゲスト・グッズ情報を追加しました</span></a></li>
       <li class="reveal"><a href="news.html#news-3"><span class="news-date">2026.08.27</span><span class="news-title">タイムテーブル・出演者・キッチンカー情報を更新しました</span></a></li>
       <li class="reveal"><a href="news.html#news-2"><span class="news-date">2026.08.20</span><span class="news-title">出演アーティスト発表！</span></a></li>
@@ -748,7 +765,7 @@
         <div class="day">保護者同伴</div>
       </div>
     </div>
-    <a class="btn btn-fill btn-square" style="margin-top:18px;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener" data-gtag-event="ticket_cta_click" data-gtag-label="vip_peatix">🎫 Peatixで購入する</a>
+    <span class="btn btn-disabled btn-square" style="margin-top:18px;">受付終了</span>
 
     <div class="lineup-divider">
       <div class="lineup-sub reveal">一般<span class="tier-desc">スタンディング(座席なし)</span></div>
@@ -769,13 +786,12 @@
           <div class="day">保護者同伴</div>
         </div>
       </div>
-      <a class="btn btn-fill btn-square" style="margin-top:18px;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener" data-gtag-event="ticket_cta_click" data-gtag-label="general_peatix">🎫 Peatixで購入する</a>
+      <span class="btn btn-disabled btn-square" style="margin-top:18px;">受付終了</span>
     </div>
 
     <div class="ticket-notice reveal">
       <h3>注意書き</h3>
       <ul>
-        <li>♨️小雨決行。台風・荒天が予想される場合は前日中を目安に開催可否を公式SNSでご案内します。</li>
         <li>♨️体調不良・発熱、その他いかなる理由でご来場いただけなかった場合も、ご購入いただいたチケットの払い戻しはいたしません。（主催者都合・天候等による公演中止は除く）</li>
         <li>♨️ご購入のチケットはご本人のみが使用でき、第三者へのチケットの譲渡・販売は禁止です。</li>
         <li>♨️チケットの不正転売及び譲渡は固く禁じます。チケットあるいはチケット購入権利を転売、あるいはオークション等に出品した場合、当該チケットを無効なものとみなします。転売により購入されたチケットのトラブルについては、一切の責任を負いません。</li>
