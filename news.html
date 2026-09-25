@@ -29,7 +29,7 @@
     --line:rgba(42,36,28,0.14);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; scroll-padding-top:84px;}
   body{
     font-family:'Zen Maru Gothic', sans-serif; color:var(--ink); line-height:1.8;
     background:var(--cream) url('images/bg-scatter-tile.png') repeat;
@@ -65,6 +65,7 @@
     transition:background .2s ease, color .2s ease, border-color .2s ease;
   }
   .btn-fill{background:var(--terracotta); color:#fff;}
+  .btn-disabled{background:#9b9b93; color:#fff; cursor:default;}
   .btn-soft{background:transparent; color:var(--ink); border-color:transparent; border-radius:8px; font-weight:700;}
   .btn-soft:hover{background:var(--forest); color:#fff;}
 
@@ -138,9 +139,26 @@
   .footer-yabutcha-logo a:hover img{opacity:.8;}
   footer .col{opacity:.8; line-height:2;}
   footer .col a{text-decoration:underline;}
+
+  .hand{font-family:'Yomogi', cursive;}
+
+  /* THANK YOU RIBBON */
+  .thanks-ribbon{
+    background:var(--forest); color:#fff; text-align:center;
+    padding:10px 16px; overflow-wrap:break-word;
+  }
+  .thanks-ribbon-hand{font-size:16px; margin-right:6px;}
+  .thanks-ribbon-text{font-size:12.5px; font-weight:700;}
+  .thanks-ribbon-link{display:inline-block; margin-left:6px; font-size:12.5px; font-weight:900; color:#fff; text-decoration:underline;}
 </style>
 </head>
 <body>
+
+<div class="thanks-ribbon">
+  <span class="hand thanks-ribbon-hand">Thank you!</span>
+  <span class="thanks-ribbon-text">9/23 IGA LAUGH &amp; MUSIC FES 2026 は無事終了しました。ご来場ありがとうございました。</span>
+  <a class="thanks-ribbon-link" href="news.html#news-6" data-gtag-event="nav_click" data-gtag-label="thanks_ribbon">お礼のメッセージを読む →</a>
+</div>
 
 <header>
   <a href="index.html"><img class="header-logo" src="images/logo-06-transparent.png" alt="IGA LAUGH & MUSIC FES 2026"></a>
@@ -162,7 +180,7 @@
       <a class="btn btn-soft" href="index.html#workshop">ワークショップ</a>
       <a class="btn btn-soft" href="index.html#foodtruck">キッチンカー</a>
       <a class="btn btn-soft" href="index.html#access">アクセス</a>
-      <a class="btn btn-fill" style="background:var(--terracotta); color:#fff;" href="https://peatix.com/event/5118936" target="_blank" rel="noopener" data-gtag-event="ticket_cta_click" data-gtag-label="news_header_nav">チケット</a>
+      <span class="btn btn-disabled">受付終了</span>
     </nav>
   </div>
   <div class="nav-scrim"></div>
@@ -172,6 +190,25 @@
   <a class="back-link" href="index.html">&larr; トップへ戻る</a>
   <span class="eyebrow">NEWS</span>
   <h1>お知らせ</h1>
+
+  <article id="news-6">
+    <div class="date">2026.09.25</div>
+    <h2>ご来場ありがとうございました</h2>
+    <div class="announce-photo"><img src="images/hero/stage-crowd.jpg" alt="ステージ前に集まる観客" loading="lazy"></div>
+    <p>音楽とお笑いで地域を明るく元気にしたい！そんな想いでスタートした「IGA LAUGH &amp; MUSIC FES 2026」。やぶっちゃの大自然の中で9月23日に無事に開催することができました。</p>
+    <p>ご来場いただいた皆さま、本当にありがとうございました！！✨</p>
+    <p>音楽、笑い、食、そして自然。</p>
+    <p>たくさんの笑顔と「楽しかった！」という声に包まれ、やぶっちゃにとっても忘れられない一日となりました。</p>
+    <p>ステージで盛り上げてくださった出演者の皆さん、楽しい体験を届けてくださったワークショップの皆さん、美味しい料理を提供してくださったキッチンカーの皆さん、準備から当日まで力を貸してくださったスタッフ・関係者の皆さん、ご協賛・ご協力いただいた皆さん。そして、このイベントに足を運んでくださったすべての皆さん。</p>
+    <p>本当にありがとうございました！！</p>
+    <p>初めての挑戦で至らないところも多々ありましたが、たくさんの方に支えていただきながら、「やぶっちゃで、こんなことができるんだ！」という可能性を感じる一日になりました。</p>
+    <p>この場所が、地域の皆さんに愛され、遠くからも「また行きたい！」と思ってもらえる場所になるように。これからも、やぶっちゃらしく、面白いこと、楽しいことをどんどん仕掛けていきます🔥</p>
+    <p>今回出会えたすべての皆さまに、心から感謝。</p>
+    <p>本当にありがとうございました！！</p>
+    <p>また、やぶっちゃで会いましょう♨️</p>
+    <p>株式会社島ヶ原リゾート<br>島ヶ原温泉やぶっちゃ　阿部哲也</p>
+    <p>#やぶっちゃ #やぶっちゃフェス #IGALAUGH＆MUSICFES2026 #島ヶ原温泉やぶっちゃ #伊賀市 #島ヶ原 #音楽と笑い #ありがとうございました</p>
+  </article>
 
   <article id="news-5">
     <div class="date">2026.09.21</div>
