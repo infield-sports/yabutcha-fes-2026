@@ -29,7 +29,8 @@
     --line:rgba(42,36,28,0.14);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth; scroll-padding-top:84px;}
+  html{scroll-behavior:smooth; scroll-padding-top:145px;}
+  @media (max-width:700px){ html{scroll-padding-top:195px;} }
   body{
     font-family:'Zen Maru Gothic', sans-serif; color:var(--ink); line-height:1.8;
     background:var(--cream) url('images/bg-scatter-tile.png') repeat;
@@ -143,6 +144,7 @@
   .hand{font-family:'Yomogi', cursive;}
 
   /* THANK YOU RIBBON */
+  .sticky-top{position:sticky; top:0; z-index:60;}
   .thanks-ribbon{
     background:var(--forest); color:#fff; text-align:center;
     padding:10px 16px; overflow-wrap:break-word;
@@ -154,6 +156,7 @@
 </head>
 <body>
 
+<div class="sticky-top">
 <div class="thanks-ribbon">
   <span class="hand thanks-ribbon-hand">Thank you!</span>
   <span class="thanks-ribbon-text">9/23 IGA LAUGH &amp; MUSIC FES 2026 は無事終了しました。ご来場ありがとうございました。</span>
@@ -185,6 +188,7 @@
   </div>
   <div class="nav-scrim"></div>
 </header>
+</div>
 
 <main class="wrap">
   <a class="back-link" href="index.html">&larr; トップへ戻る</a>
@@ -194,7 +198,7 @@
   <article id="news-6">
     <div class="date">2026.09.25</div>
     <h2>ご来場ありがとうございました</h2>
-    <div class="announce-photo"><img src="images/hero/stage-crowd.jpg" alt="ステージ前に集まる観客" loading="lazy"></div>
+    <div class="announce-photo"><img src="images/thanks-group-photo.jpg" alt="フィナーレの集合写真" loading="lazy"></div>
     <p>音楽とお笑いで地域を明るく元気にしたい！そんな想いでスタートした「IGA LAUGH &amp; MUSIC FES 2026」。やぶっちゃの大自然の中で9月23日に無事に開催することができました。</p>
     <p>ご来場いただいた皆さま、本当にありがとうございました！！✨</p>
     <p>音楽、笑い、食、そして自然。</p>
