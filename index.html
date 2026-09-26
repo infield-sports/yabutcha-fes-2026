@@ -382,6 +382,28 @@
     .artist-modal-card{animation:none; transform:none; opacity:1;}
   }
 
+  /* GALLERY */
+  .gallery-grid{margin-top:36px; display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+  @media (max-width:900px){ .gallery-grid{grid-template-columns:repeat(3,1fr);} }
+  @media (max-width:600px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
+  .gallery-item{
+    border-radius:14px; overflow:hidden; aspect-ratio:4/3; cursor:pointer;
+    border:1px solid var(--line); transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .gallery-item:hover, .gallery-item:focus-visible{transform:translateY(-4px); box-shadow:0 16px 32px rgba(42,36,28,0.16);}
+  .gallery-item img{width:100%; height:100%; object-fit:cover; display:block;}
+
+  .photo-modal{display:none; position:fixed; inset:0; z-index:200; align-items:center; justify-content:center; padding:48px 24px;}
+  .photo-modal.is-open{display:flex;}
+  .photo-modal-scrim{position:absolute; inset:0; background:rgba(20,20,15,0.85);}
+  .photo-modal-img-wrap{position:relative; max-width:min(92vw,1100px); max-height:88vh;}
+  .photo-modal-img-wrap img{max-width:100%; max-height:88vh; display:block; border-radius:10px; margin:0 auto;}
+  .photo-modal-close{
+    position:absolute; top:-40px; right:0; background:none; border:none;
+    color:#fff; font-size:32px; line-height:1; cursor:pointer;
+  }
+  @media (max-width:600px){ .photo-modal-close{top:-36px; right:4px;} }
+
   .performance-solo{display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-top:24px;}
   .performance-solo .artist-card{width:min(35vw, 200px);}
   .comedian-solo{display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:18px;}
@@ -502,10 +524,10 @@
     <video class="hero-slide is-active" autoplay muted loop playsinline>
       <source src="images/hero.mov">
     </video>
-    <img class="hero-slide" src="images/hero/foodtruck-sunset.jpg" alt="" loading="eager">
-    <img class="hero-slide" src="images/hero/stage-crowd.jpg" alt="" loading="eager">
-    <img class="hero-slide" src="images/hero/laugh-stage-night.jpg" alt="" loading="eager">
-    <img class="hero-slide" src="images/hero/workshop.jpg" alt="" loading="eager">
+    <img class="hero-slide" src="images/report/report-16.jpg" alt="" loading="eager">
+    <img class="hero-slide" src="images/report/report-15.jpg" alt="" loading="eager">
+    <img class="hero-slide" src="images/report/report-20.jpg" alt="" loading="eager">
+    <img class="hero-slide" src="images/report/report-02.jpg" alt="" loading="eager">
   </div>
   <div class="hero-kicker">IGA LAUGH &amp; MUSIC FES 2026</div>
   <img class="hero-badge" src="images/logo-03-transparent.png" alt="IGA LAUGH & MUSIC FES 2026 やぶっちゃと愉快な仲間たち">
@@ -558,6 +580,36 @@
     </div>
   </div>
 </section>
+
+<section id="gallery" class="band">
+  <div class="wrap wrap-wide">
+    <span class="eyebrow reveal">GALLERY</span>
+    <h2 class="reveal">当日の様子</h2>
+    <p class="lead reveal">音楽、お笑い、ワークショップ、そして夕暮れのステージまで。当日の会場の雰囲気をお届けします。</p>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" data-photo="images/report/report-01.jpg"><img src="images/report/report-01.jpg" alt="お笑いステージのMC" loading="lazy"></div>
+      <div class="gallery-item reveal" data-photo="images/report/report-04.jpg"><img src="images/report/report-04.jpg" alt="バスケットボールのダンクシュート" loading="lazy"></div>
+      <div class="gallery-item reveal" data-photo="images/report/report-05.jpg"><img src="images/report/report-05.jpg" alt="バスケットボールエキシビションマッチ" loading="lazy"></div>
+      <div class="gallery-item reveal" data-photo="images/report/report-06.jpg"><img src="images/report/report-06.jpg" alt="太鼓パフォーマンス" loading="lazy"></div>
+      <div class="gallery-item reveal" data-photo="images/report/report-07.jpg"><img src="images/report/report-07.jpg" alt="ワークショップの様子" loading="lazy"></div>
+      <div class="gallery-item reveal" data-photo="images/report/report-08.jpg"><img src="images/report/report-08.jpg" alt="ワークショップに参加する子ども" loading="lazy"></div>
+      <div class="gallery-item reveal" data-photo="images/report/report-10.jpg"><img src="images/report/report-10.jpg" alt="ダンスパフォーマンス" loading="lazy"></div>
+      <div class="gallery-item reveal" data-photo="images/report/report-11.jpg"><img src="images/report/report-11.jpg" alt="盛り上がるステージパフォーマンス" loading="lazy"></div>
+      <div class="gallery-item reveal" data-photo="images/report/report-13.jpg"><img src="images/report/report-13.jpg" alt="熱唱するボーカルパフォーマンス" loading="lazy"></div>
+      <div class="gallery-item reveal" data-photo="images/report/report-17.jpg"><img src="images/report/report-17.jpg" alt="盛り上がる観客" loading="lazy"></div>
+      <div class="gallery-item reveal" data-photo="images/report/report-19.jpg"><img src="images/report/report-19.jpg" alt="夕暮れのステージ演出" loading="lazy"></div>
+      <div class="gallery-item reveal" data-photo="images/report/report-21.jpg"><img src="images/report/report-21.jpg" alt="盛り上がるフィナーレのステージ" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<div class="photo-modal" id="photo-modal" aria-hidden="true">
+  <div class="photo-modal-scrim" data-photo-modal-close></div>
+  <div class="photo-modal-img-wrap" role="dialog" aria-modal="true">
+    <button class="photo-modal-close" type="button" aria-label="閉じる" data-photo-modal-close>&times;</button>
+    <img id="photo-modal-img" src="" alt="">
+  </div>
+</div>
 
 <section id="lineup" class="band">
   <div class="wrap">
@@ -943,6 +995,43 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
+
+  // ギャラリー写真のライトボックス表示
+  var photoModal = document.getElementById('photo-modal');
+  var photoModalImg = document.getElementById('photo-modal-img');
+  if (photoModal && photoModalImg) {
+    function openPhotoModal(src, alt) {
+      photoModalImg.src = src;
+      photoModalImg.alt = alt || '';
+      photoModal.classList.add('is-open');
+      photoModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePhotoModal() {
+      photoModal.classList.remove('is-open');
+      photoModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.gallery-item[data-photo]').forEach(function (item) {
+      item.setAttribute('tabindex', '0');
+      item.addEventListener('click', function () {
+        var img = item.querySelector('img');
+        openPhotoModal(item.getAttribute('data-photo'), img ? img.alt : '');
+      });
+      item.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          item.click();
+        }
+      });
+    });
+    photoModal.querySelectorAll('[data-photo-modal-close]').forEach(function (el) {
+      el.addEventListener('click', closePhotoModal);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && photoModal.classList.contains('is-open')) closePhotoModal();
+    });
+  }
 
   // GA4カスタムイベント計測(チケット導線・外部リンク・お知らせクリック)
   document.addEventListener('click', function (e) {

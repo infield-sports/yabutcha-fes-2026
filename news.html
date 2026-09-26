@@ -127,6 +127,9 @@
 
   .announce-photo{margin-top:28px; border-radius:16px; overflow:hidden; border:1px solid var(--line);}
   .announce-photo img{width:100%; height:auto; display:block;}
+  .announce-photo-grid{margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .announce-photo-grid .announce-photo{margin-top:0;}
+  @media (max-width:500px){ .announce-photo-grid{grid-template-columns:1fr;} }
 
   .footer-title{font-weight:900; font-size:13px; letter-spacing:.04em; margin-bottom:16px;}
   footer{background:var(--ink); color:var(--cream); padding:6vh 6vw; text-align:center; font-size:12px;}
@@ -199,6 +202,10 @@
     <div class="date">2026.09.25</div>
     <h2>ご来場ありがとうございました</h2>
     <div class="announce-photo"><img src="images/thanks-group-photo.jpg" alt="フィナーレの集合写真" loading="lazy"></div>
+    <div class="announce-photo-grid">
+      <div class="announce-photo"><img src="images/report/report-14.jpg" alt="盛り上がる観客" loading="lazy"></div>
+      <div class="announce-photo"><img src="images/report/report-18.jpg" alt="ステージで盛り上がるパフォーマー" loading="lazy"></div>
+    </div>
     <p>音楽とお笑いで地域を明るく元気にしたい！そんな想いでスタートした「IGA LAUGH &amp; MUSIC FES 2026」。やぶっちゃの大自然の中で9月23日に無事に開催することができました。</p>
     <p>ご来場いただいた皆さま、本当にありがとうございました！！✨</p>
     <p>音楽、笑い、食、そして自然。</p>
